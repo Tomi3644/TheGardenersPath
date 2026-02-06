@@ -225,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453449562076812403}
   - component: {fileID: 8590703289806979646}
+  - component: {fileID: 8682025762186120748}
   m_Layer: 5
   m_Name: UI_Graines
   m_TagString: Untagged
@@ -281,6 +282,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8682025762186120748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151755871577709115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e924567c573b42f48bb4dd99ea954615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChoixGraine
+  graine1: {fileID: 3341381461641157512}
+  graine2: {fileID: 8618025749328193823}
+  graine3: {fileID: 2384544031543205807}
+  graine4: {fileID: 1215731816752441169}
 --- !u!1 &2384544031543205807
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.18561673, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
