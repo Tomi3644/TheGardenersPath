@@ -118,6 +118,78 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""6eb474fd-8017-40ee-ab70-a56ce769da6f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ScrollSeeds"",
+                    ""type"": ""Value"",
+                    ""id"": ""a888349b-d36f-4ba6-b370-c48f2d234df5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Seed1"",
+                    ""type"": ""Button"",
+                    ""id"": ""d93f6ef3-275b-444d-9cf4-870c481c319c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Seed2"",
+                    ""type"": ""Button"",
+                    ""id"": ""dff0a556-027a-497e-b841-bd5f517433e4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Seed3"",
+                    ""type"": ""Button"",
+                    ""id"": ""34d37832-6c4f-4570-a394-057332627b59"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Seed4"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce11ae1d-0457-43db-b4ca-8f7e8c9b1568"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GamepadSeedForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""48991d14-e31c-44ed-ad47-ad21080bfdfe"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GamepadSeedBackward"",
+                    ""type"": ""Button"",
+                    ""id"": ""43531194-54b8-48c4-a480-bdb7b00f8750"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,9 +297,108 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""508b1a83-4eac-4205-b533-bb98ffc147f8"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=15,y=10)"",
                     ""groups"": """",
                     ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fdd2938-8ab2-4783-a90e-d5c09ed25db8"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9552f72d-98b3-45da-b191-eb81ace1199b"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80e6b32d-618f-4a2f-a492-39d1e4c84842"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollSeeds"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eabda0ef-9981-4862-8e07-d82caee79845"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Seed2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95a6a0a2-ebd3-48f2-b386-20ff3d242481"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Seed3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""784c10e2-0aff-4758-8389-237ccd232547"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Seed4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adbf52ef-9e2a-498a-ba22-19b8485a4a54"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Seed1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba77f172-49cb-45f7-a3e4-bdae7e86bb74"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamepadSeedForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ede0926-f429-4e31-b988-31e2d9d97191"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamepadSeedBackward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -241,6 +412,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
         m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
         m_Game_Look = m_Game.FindAction("Look", throwIfNotFound: true);
+        m_Game_Throw = m_Game.FindAction("Throw", throwIfNotFound: true);
+        m_Game_ScrollSeeds = m_Game.FindAction("ScrollSeeds", throwIfNotFound: true);
+        m_Game_Seed1 = m_Game.FindAction("Seed1", throwIfNotFound: true);
+        m_Game_Seed2 = m_Game.FindAction("Seed2", throwIfNotFound: true);
+        m_Game_Seed3 = m_Game.FindAction("Seed3", throwIfNotFound: true);
+        m_Game_Seed4 = m_Game.FindAction("Seed4", throwIfNotFound: true);
+        m_Game_GamepadSeedForward = m_Game.FindAction("GamepadSeedForward", throwIfNotFound: true);
+        m_Game_GamepadSeedBackward = m_Game.FindAction("GamepadSeedBackward", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -324,6 +503,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Game_Move;
     private readonly InputAction m_Game_Jump;
     private readonly InputAction m_Game_Look;
+    private readonly InputAction m_Game_Throw;
+    private readonly InputAction m_Game_ScrollSeeds;
+    private readonly InputAction m_Game_Seed1;
+    private readonly InputAction m_Game_Seed2;
+    private readonly InputAction m_Game_Seed3;
+    private readonly InputAction m_Game_Seed4;
+    private readonly InputAction m_Game_GamepadSeedForward;
+    private readonly InputAction m_Game_GamepadSeedBackward;
     /// <summary>
     /// Provides access to input actions defined in input action map "Game".
     /// </summary>
@@ -347,6 +534,38 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Game/Look".
         /// </summary>
         public InputAction @Look => m_Wrapper.m_Game_Look;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/Throw".
+        /// </summary>
+        public InputAction @Throw => m_Wrapper.m_Game_Throw;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/ScrollSeeds".
+        /// </summary>
+        public InputAction @ScrollSeeds => m_Wrapper.m_Game_ScrollSeeds;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/Seed1".
+        /// </summary>
+        public InputAction @Seed1 => m_Wrapper.m_Game_Seed1;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/Seed2".
+        /// </summary>
+        public InputAction @Seed2 => m_Wrapper.m_Game_Seed2;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/Seed3".
+        /// </summary>
+        public InputAction @Seed3 => m_Wrapper.m_Game_Seed3;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/Seed4".
+        /// </summary>
+        public InputAction @Seed4 => m_Wrapper.m_Game_Seed4;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/GamepadSeedForward".
+        /// </summary>
+        public InputAction @GamepadSeedForward => m_Wrapper.m_Game_GamepadSeedForward;
+        /// <summary>
+        /// Provides access to the underlying input action "Game/GamepadSeedBackward".
+        /// </summary>
+        public InputAction @GamepadSeedBackward => m_Wrapper.m_Game_GamepadSeedBackward;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -382,6 +601,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
+            @ScrollSeeds.started += instance.OnScrollSeeds;
+            @ScrollSeeds.performed += instance.OnScrollSeeds;
+            @ScrollSeeds.canceled += instance.OnScrollSeeds;
+            @Seed1.started += instance.OnSeed1;
+            @Seed1.performed += instance.OnSeed1;
+            @Seed1.canceled += instance.OnSeed1;
+            @Seed2.started += instance.OnSeed2;
+            @Seed2.performed += instance.OnSeed2;
+            @Seed2.canceled += instance.OnSeed2;
+            @Seed3.started += instance.OnSeed3;
+            @Seed3.performed += instance.OnSeed3;
+            @Seed3.canceled += instance.OnSeed3;
+            @Seed4.started += instance.OnSeed4;
+            @Seed4.performed += instance.OnSeed4;
+            @Seed4.canceled += instance.OnSeed4;
+            @GamepadSeedForward.started += instance.OnGamepadSeedForward;
+            @GamepadSeedForward.performed += instance.OnGamepadSeedForward;
+            @GamepadSeedForward.canceled += instance.OnGamepadSeedForward;
+            @GamepadSeedBackward.started += instance.OnGamepadSeedBackward;
+            @GamepadSeedBackward.performed += instance.OnGamepadSeedBackward;
+            @GamepadSeedBackward.canceled += instance.OnGamepadSeedBackward;
         }
 
         /// <summary>
@@ -402,6 +645,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
+            @ScrollSeeds.started -= instance.OnScrollSeeds;
+            @ScrollSeeds.performed -= instance.OnScrollSeeds;
+            @ScrollSeeds.canceled -= instance.OnScrollSeeds;
+            @Seed1.started -= instance.OnSeed1;
+            @Seed1.performed -= instance.OnSeed1;
+            @Seed1.canceled -= instance.OnSeed1;
+            @Seed2.started -= instance.OnSeed2;
+            @Seed2.performed -= instance.OnSeed2;
+            @Seed2.canceled -= instance.OnSeed2;
+            @Seed3.started -= instance.OnSeed3;
+            @Seed3.performed -= instance.OnSeed3;
+            @Seed3.canceled -= instance.OnSeed3;
+            @Seed4.started -= instance.OnSeed4;
+            @Seed4.performed -= instance.OnSeed4;
+            @Seed4.canceled -= instance.OnSeed4;
+            @GamepadSeedForward.started -= instance.OnGamepadSeedForward;
+            @GamepadSeedForward.performed -= instance.OnGamepadSeedForward;
+            @GamepadSeedForward.canceled -= instance.OnGamepadSeedForward;
+            @GamepadSeedBackward.started -= instance.OnGamepadSeedBackward;
+            @GamepadSeedBackward.performed -= instance.OnGamepadSeedBackward;
+            @GamepadSeedBackward.canceled -= instance.OnGamepadSeedBackward;
         }
 
         /// <summary>
@@ -463,5 +730,61 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Throw" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThrow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ScrollSeeds" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnScrollSeeds(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Seed1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSeed1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Seed2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSeed2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Seed3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSeed3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Seed4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSeed4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "GamepadSeedForward" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGamepadSeedForward(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "GamepadSeedBackward" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGamepadSeedBackward(InputAction.CallbackContext context);
     }
 }
