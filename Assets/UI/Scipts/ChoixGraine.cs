@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ChoixGraine : MonoBehaviour
 {
-    private int graine;
+    public int graine;
     public GameObject graine1;
     public GameObject graine2;
     public GameObject graine3;

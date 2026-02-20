@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e924567c573b42f48bb4dd99ea954615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChoixGraine
+  graine: 1
   graine1: {fileID: 3341381461641157512}
   graine2: {fileID: 8618025749328193823}
   graine3: {fileID: 2384544031543205807}
