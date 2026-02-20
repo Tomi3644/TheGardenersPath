@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class LookAtTarget : MonoBehaviour
+public class LookAtTargetAnchored : MonoBehaviour
 {
     private Transform target;
 
@@ -17,6 +17,7 @@ public class LookAtTarget : MonoBehaviour
         {
             // Inverted direction for the quads
             Vector3 direction = target.position - transform.position;
+            direction.y = 0f;
             transform.rotation = Quaternion.LookRotation(-direction);
         }
     }
