@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 8036546886442352542}
   - component: {fileID: 6092535449516587063}
   m_Layer: 5
-  m_Name: Graine4
+  m_Name: Seed4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 8590703289806979646}
   - component: {fileID: 8682025762186120748}
   m_Layer: 5
-  m_Name: UI_Graines
+  m_Name: UI_SeedsInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 4713536912178688828}
   - component: {fileID: 6177509216798874003}
   m_Layer: 5
-  m_Name: Graine3
+  m_Name: Seed3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 3388699689398559770}
   - component: {fileID: 4250605340622230770}
   m_Layer: 5
-  m_Name: Graine1
+  m_Name: Seed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 7398547905083787589}
   - component: {fileID: 193767394267254304}
   m_Layer: 5
-  m_Name: Graine2
+  m_Name: Seed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

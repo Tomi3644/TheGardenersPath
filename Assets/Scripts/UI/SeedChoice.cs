@@ -21,20 +21,20 @@ public class SeedChoice : MonoBehaviour
 
     private void InputChoice()
     {
-        // Touches du clavier 1 2 3 4
+        // Choosing seed using keyboard input
         currentButton = inputManager.PlayerChangedSeedButton();
         if (currentButton != 0)
         {
             seedID = currentButton;
         }
 
-        // Scroll de la souris
-        if (inputManager.PlayerScrolled() > 0f ) // forward
+        // Choosing seed using  Wheel scroll
+        if (inputManager.PlayerScrolled() < 0f ) // forward
         {
             if(seedID==4){seedID = 1;}
             else{seedID++;}
         }
-        else if (inputManager.PlayerScrolled() < 0f ) // backwards
+        else if (inputManager.PlayerScrolled() > 0f ) // backwards
         {
             if(seedID==1){seedID = 4;}
             else{seedID--;}
@@ -44,6 +44,7 @@ public class SeedChoice : MonoBehaviour
 
     private void DisplaySeed()
     {
+        // Change seed overlay if choosen
         seedUI1.gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
         seedUI2.gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
         seedUI3.gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
