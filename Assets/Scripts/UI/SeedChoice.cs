@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SeedChoice : MonoBehaviour
 {
+    /*
     public int seedID = 1;
     public GameObject seedUI1;
     public GameObject seedUI2;
@@ -61,4 +62,5 @@ public class SeedChoice : MonoBehaviour
         InputChoice();
         DisplaySeed();
     }
+    */
 }

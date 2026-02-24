@@ -19,29 +19,27 @@ public class SeedThrower : MonoBehaviour
 
     private bool readyToThrow;
     private InputManager inputManager;
-    private SeedChoice seedChoice;
 
     private void Start()
     {
         readyToThrow = true;
         inputManager = InputManager.Instance;
-        seedChoice = FindAnyObjectByType<SeedChoice>();
     }
 
     private void Update()
     {
-        if(inputManager.PlayerThrewThisFrame() && readyToThrow)
+        if(inputManager.PlayerThrewSeed() != 0 && readyToThrow)
         {
-            Throw();
+            Throw(inputManager.PlayerThrewSeed());
         }
     }
 
-    private void Throw()
+    private void Throw(int seedID)
     {
         readyToThrow = false;
 
         // instantiate object to throw
-        GameObject projectile = Instantiate(seedPrefabs[seedChoice.seedID - 1], attackPoint.position, cam.rotation);
+        GameObject projectile = Instantiate(seedPrefabs[seedID - 1], attackPoint.position, cam.rotation);
 
         // get rigidbody component
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();

@@ -39,26 +39,10 @@ public class InputManager : MonoBehaviour
         return playerInputs.Game.Jump.triggered;
     }
 
-    public bool PlayerThrewThisFrame()
-    {
-        return playerInputs.Game.Throw.triggered;
-    }
-
-    public int PlayerChangedSeedButton()
+    public int PlayerThrewSeed()
     {
         if (playerInputs.Game.Seed1.triggered) return 1;
         else if (playerInputs.Game.Seed2.triggered) return 2;
-        else if (playerInputs.Game.Seed3.triggered) return 3;
-        else if (playerInputs.Game.Seed4.triggered) return 4;
         else return 0;
-    }
-
-    public float PlayerScrolled()
-    {
-        if (playerInputs.Game.GamepadSeedForward.triggered)
-            return 1f;
-        else if (playerInputs.Game.GamepadSeedBackward.triggered)
-            return -1f;
-        else return playerInputs.Game.ScrollSeeds.ReadValue<float>();
     }
 }
