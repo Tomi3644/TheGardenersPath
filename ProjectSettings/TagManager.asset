@@ -8,11 +8,12 @@ TagManager:
   - Seed2
   - Seed3
   - Seed4
+  - Death
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
