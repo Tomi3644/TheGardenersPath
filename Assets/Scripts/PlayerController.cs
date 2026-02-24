@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.SphereCast(transform.position,0.5f,-transform.up,out RaycastHit hit,0.6f);
+        isGrounded = Physics.SphereCast(transform.position,0.5f,-transform.up,out RaycastHit hit,0.6f, 1 << 3);
         if (isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = -0.1f;
@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         
         isJumping = inputManager.PlayerJumpedThisFrame();
-        if (isJumping) print("SAUTE PITIÉ");
         if (isJumping && isGrounded)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
