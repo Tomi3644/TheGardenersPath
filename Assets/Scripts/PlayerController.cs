@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerVelocity;
     private bool isGrounded;
     private bool canBounce = true;
+    private bool canJump = true;
     private bool bounced;
     private bool isJumping;
     private bool isOnLadder;
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         if (isOnLadder && movement.y > 0f)
         {
-            move = cameraTransform.up * move.z + cameraTransform.right * move.x;
+            move = Vector3.up * move.z + transform.right * move.x;
         }
         else
         {
@@ -66,9 +67,11 @@ public class PlayerController : MonoBehaviour
         // Player jump on input if on layer Ground
         isJumping = inputManager.PlayerJumpedThisFrame();
 
-        if (isJumping && isGrounded)
+        if (isJumping && isGrounded && canJump)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            canJump = false;
+            StartCoroutine(JumpWait());
         }
 
         // Player automatically jump if on layer Bouncer and cannot bounce twice in two frames
@@ -84,8 +87,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Gravity application on player (different if on ladder)
-        if (isOnLadder && movement.y > 0f) playerVelocity.y += -0.5f * Time.deltaTime;
-        else playerVelocity.y += gravityValue * Time.deltaTime;
+        if (!isOnLadder && movement.y <= 0f) playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
         var currentHeight = transform.position.y;
@@ -97,13 +99,19 @@ public class PlayerController : MonoBehaviour
         previousHeight = transform.position.y;
     }
 
-    // Timer to prevent from bouncing twice in two frames
+    // Timer to prevent from jumping/bouncing twice in two frames
     private IEnumerator BounceWait()
     {
         yield return new WaitForSeconds(.5f);
         canBounce = true;
     }
 
+    private IEnumerator JumpWait()
+    {
+        yield return new WaitForSeconds(.1f);
+        canJump = true;
+    }
+    
     // Trigger handling for ladder
     void OnTriggerEnter(Collider other)
     {
