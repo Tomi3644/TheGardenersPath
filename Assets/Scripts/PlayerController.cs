@@ -34,9 +34,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // definition of the variables link to the layers
+        // Definition of the variables link to the layers
         isGrounded = Physics.SphereCast(transform.position,0.5f,-transform.up,out RaycastHit groundHit,0.6f, 1 << 3);
         isBouncing = Physics.SphereCast(transform.position, 0.5f, -transform.up, out RaycastHit bouncerHit, 0.6f, 1 << 6);
+        // Player is affected by gravity
         if (isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = -0.1f;
