@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UI : MonoBehaviour
+public class OpenSettings : MonoBehaviour
 {
     private InputManager inputManager;
     private GameObject menu;
