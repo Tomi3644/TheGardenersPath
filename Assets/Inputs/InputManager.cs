@@ -45,4 +45,9 @@ public class InputManager : MonoBehaviour
         else if (playerInputs.Game.Seed2.triggered) return 2;
         else return 0;
     }
+
+    public bool OpeningSettingsMenu()
+    {
+        return playerInputs.Game.Settings.triggered;
+    }
 }
