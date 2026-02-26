@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 public class OpenSettings : MonoBehaviour
 {
     private InputManager inputManager;
-    private GameObject menu;
+    private GameObject pause;
+    private GameObject settings;
 
     private void Start()
     {
         inputManager = InputManager.Instance;
-        menu = GameObject.Find("PauseMenu");
-        menu.SetActive(false);
+        pause = GameObject.Find("PauseMenu");
+        settings = GameObject.Find("SettingsMenu");
+        pause.SetActive(false);
+        settings.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class OpenSettings : MonoBehaviour
     {
         if (inputManager.OpeningSettingsMenu())
         {
-            menu.SetActive(true);
+            pause.SetActive(true);
         }
     }
 }
