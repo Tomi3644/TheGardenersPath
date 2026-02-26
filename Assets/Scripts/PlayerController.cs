@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private float gravityValue;
     private float previousHeight;
-    private PlayerInput playerInput;
 
     [SerializeField]
     private float playerSpeed;
@@ -29,19 +28,19 @@ public class PlayerController : MonoBehaviour
     private float fallGravity;
     [SerializeField]
     private float bounceHeight;
+
     private void Start()
     {
         gravityValue = normalGravity;
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
         controller = GetComponent<CharacterController>();
-        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
         // Check if player on the ground
-        isGrounded = Physics.SphereCast(transform.position, 0.5f, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
+        isGrounded = Physics.SphereCast(transform.position, 0.4f, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
 
         if (isGrounded && playerVelocity.y < 0)
         {
@@ -52,24 +51,37 @@ public class PlayerController : MonoBehaviour
         // If on ladder, player goes up
         Vector2 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
+
+        Vector3 forward = cameraTransform.forward;
+        forward.y = 0f;
+        forward.Normalize();
+
+        Vector3 right = cameraTransform.right;
+        right.y = 0f;
+        right.Normalize();
+
         if (isOnLadder && movement.y > 0f)
         {
             move = Vector3.up * move.z + transform.right * move.x;
         }
         else
         {
-            move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+            move = forward * move.z + right * move.x;
             move.y = 0f;
         }
-        
-        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        // controller.Move(move * Time.deltaTime * playerSpeed);
+        playerVelocity.x = move.x * playerSpeed;
+        if (move.y != 0f) playerVelocity.y = move.y * playerSpeed;
+        playerVelocity.z = move.z * playerSpeed;
 
         // Player jump on input if on layer Ground
         isJumping = inputManager.PlayerJumpedThisFrame();
 
-        if (isJumping && isGrounded && canJump)
+        if (isJumping && isGrounded && canJump && !isOnLadder)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             canJump = false;
             StartCoroutine(JumpWait());
         }
@@ -87,8 +99,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Gravity application on player (different if on ladder)
-        if (!isOnLadder && movement.y <= 0f) playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        if (!isOnLadder) playerVelocity.y += gravityValue * Time.deltaTime;
 
         var currentHeight = transform.position.y;
         if (currentHeight + 0.02f < previousHeight)
@@ -97,6 +108,9 @@ public class PlayerController : MonoBehaviour
         }
         else { gravityValue = normalGravity; }
         previousHeight = transform.position.y;
+
+        // Final movement
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 
     // Timer to prevent from jumping/bouncing twice in two frames
