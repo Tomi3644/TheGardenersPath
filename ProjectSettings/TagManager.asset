@@ -9,6 +9,7 @@ TagManager:
   - Death
   - Bouncer
   - Ladder
+  - PlantSeedGet
   layers:
   - Default
   - TransparentFX

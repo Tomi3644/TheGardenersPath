@@ -21,7 +21,7 @@ public class DeathManager : MonoBehaviour
             bool isSaved = false;
             foreach (GameObject point in respawnPoints)
             {
-                if (point == other)
+                if (point == other.gameObject)
                 {
                     isSaved = true;
                 }

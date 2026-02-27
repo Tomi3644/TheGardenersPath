@@ -17,6 +17,9 @@ public class SeedThrower : MonoBehaviour
     [Header("Seed Prefabs")]
     [SerializeField] private GameObject[] seedPrefabs;
 
+    private bool plantSeedUnlocked;
+    private int seedThrownID;
+
     private bool readyToThrow;
     private InputManager inputManager;
 
@@ -28,9 +31,17 @@ public class SeedThrower : MonoBehaviour
 
     private void Update()
     {
-        if(inputManager.PlayerThrewSeed() != 0 && readyToThrow)
+        seedThrownID = inputManager.PlayerThrewSeed();
+        if(seedThrownID != 0 && readyToThrow)
         {
-            Throw(inputManager.PlayerThrewSeed());
+            if (seedThrownID == 2)
+            {
+                if (plantSeedUnlocked)
+                {
+                    Throw(seedThrownID);
+                }
+            }
+            else Throw(seedThrownID);
         }
     }
 
@@ -66,5 +77,14 @@ public class SeedThrower : MonoBehaviour
     private void ResetThrow()
     {
         readyToThrow = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PlantSeedGet")
+        {
+            plantSeedUnlocked = true;
+            Destroy(other.gameObject);
+        }
     }
 }
