@@ -308,7 +308,7 @@ MonoBehaviour:
   jumpHeight: 1.5
   normalGravity: -9.81
   fallGravity: -30
-  bounceHeight: 0.7
+  bounceHeight: 2
 --- !u!114 &392994388510736359
 MonoBehaviour:
   m_ObjectHideFlags: 0
