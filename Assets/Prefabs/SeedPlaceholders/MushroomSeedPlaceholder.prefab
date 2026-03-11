@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 6842450137383453512}
   - component: {fileID: 425356852078590092}
   - component: {fileID: 5966306439187961610}
-  - component: {fileID: 7447846216788855008}
+  - component: {fileID: 6325041407280025104}
   m_Layer: 0
-  m_Name: Seed2Placeholder
-  m_TagString: Seed2
+  m_Name: MushroomSeedPlaceholder
+  m_TagString: MushroomSeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06556822b22a222459ac0d93014693ef, type: 2}
+  - {fileID: 2100000, guid: 9b0fab8a6ace84e45aa64b045ae16ca2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7447846216788855008
+--- !u!114 &6325041407280025104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
