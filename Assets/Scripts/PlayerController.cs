@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,13 +40,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        bool bouncedThisFrame = false;
+        gravityValue = normalGravity;
+
         // Check if player on the ground
         isGrounded = Physics.SphereCast(transform.position, 0.4f, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
-
-        if (isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = -0.1f;
-        }
 
         // Get player inputs and move accordingly
         // If on ladder, player goes up
@@ -69,11 +68,22 @@ public class PlayerController : MonoBehaviour
             move = forward * move.z + right * move.x;
             move.y = 0f;
         }
-
-        // controller.Move(move * Time.deltaTime * playerSpeed);
         playerVelocity.x = move.x * playerSpeed;
         if (move.y != 0f) playerVelocity.y = move.y * playerSpeed;
         playerVelocity.z = move.z * playerSpeed;
+
+        // Player automatically jump if on layer Bouncer and cannot bounce twice in two frames
+        if (Physics.SphereCast(transform.position, 0.48f, -transform.up, out RaycastHit bouncerHit, 0.6f, 1 << 6))
+        {
+            if (canBounce && playerVelocity.y <= 0f)
+            {
+                playerVelocity.y = Mathf.Sqrt(bounceHeight * -2.0f * gravityValue);
+                canBounce = false;
+                bouncedThisFrame = true;
+
+                StartCoroutine(BounceWait());
+            }
+        }
 
         // Player jump on input if on layer Ground
         isJumping = inputManager.PlayerJumpedThisFrame();
@@ -86,20 +96,13 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(JumpWait());
         }
 
-        // Player automatically jump if on layer Bouncer and cannot bounce twice in two frames
-        if (Physics.SphereCast(transform.position, 0.48f, -transform.up, out RaycastHit bouncerHit, 0.6f, 1 << 6))
+        if (isGrounded && playerVelocity.y < 0)
         {
-            if (canBounce && playerVelocity.y <= 0f)
-            {
-                playerVelocity.y = Mathf.Sqrt(bounceHeight * -2.0f * gravityValue);
-                canBounce = false;
-
-                StartCoroutine(BounceWait());
-            }
+            playerVelocity.y = -0.1f;
         }
 
         // Gravity application on player (different if on ladder)
-        if (!isOnLadder) playerVelocity.y += gravityValue * Time.deltaTime;
+        if (!isOnLadder && !bouncedThisFrame) playerVelocity.y += gravityValue * Time.deltaTime;
 
         var currentHeight = transform.position.y;
         if (currentHeight + 0.02f < previousHeight)
@@ -108,7 +111,7 @@ public class PlayerController : MonoBehaviour
         }
         else { gravityValue = normalGravity; }
         previousHeight = transform.position.y;
-
+        
         // Final movement
         controller.Move(playerVelocity * Time.deltaTime);
     }

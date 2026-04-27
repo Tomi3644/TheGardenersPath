@@ -997,6 +997,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8773111324865650621, guid: 36cd35ada1a97304196bafa1896294a0, type: 3}
+      propertyPath: fallGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773111324865650621, guid: 36cd35ada1a97304196bafa1896294a0, type: 3}
+      propertyPath: bounceHeight
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4218,7 +4226,7 @@ GameObject:
   - component: {fileID: 1058995881}
   - component: {fileID: 1058995880}
   - component: {fileID: 1058995879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DBranch4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
