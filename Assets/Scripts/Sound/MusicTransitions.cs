@@ -48,7 +48,7 @@ public class MusicTransitions : MonoBehaviour
                 musicManager.PlayStopClip(true, true);
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, 0));
 
-                // StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, 0));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.ForestAmbiance, -30));
 
                 break;
