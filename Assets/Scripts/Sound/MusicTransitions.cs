@@ -21,7 +21,8 @@ public class MusicTransitions : MonoBehaviour
         if(other.tag == "Player")
         {
             MakeTransition();
-            GetComponent<BoxCollider>().enabled = false;
+            TryGetComponent<BoxCollider>(out BoxCollider collider);
+            if(collider != null) collider.enabled = false;
         }
     }
 

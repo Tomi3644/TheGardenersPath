@@ -55,7 +55,6 @@ public class MusicManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             mixer.SetFloat(targetGroupVolume, Mathf.Lerp(startVolume, targetVolume, elapsedTime / timeToFade));
-            print(elapsedTime);
             yield return null;
         }
         yield break;
