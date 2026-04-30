@@ -17,6 +17,9 @@ public class SeedThrower : MonoBehaviour
     [Header("Seed Prefabs")]
     [SerializeField] private GameObject[] seedPrefabs;
 
+    [Header("Seed Music Transition")]
+    [SerializeField] private MusicTransitions transition;
+
     private bool plantSeedUnlocked;
     private int seedThrownID;
 
@@ -84,6 +87,7 @@ public class SeedThrower : MonoBehaviour
         if (other.tag == "PlantSeedGet")
         {
             plantSeedUnlocked = true;
+            transition.MakeTransition();
             Destroy(other.gameObject);
         }
     }
