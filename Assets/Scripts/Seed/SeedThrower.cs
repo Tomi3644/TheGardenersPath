@@ -6,6 +6,7 @@ public class SeedThrower : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private GameObject objectToThrow;
+    [SerializeField] private Animator handsAnimator;
 
     [Header("Settings")]
     [SerializeField] private float throwCooldown;
@@ -35,20 +36,36 @@ public class SeedThrower : MonoBehaviour
     private void Update()
     {
         seedThrownID = inputManager.PlayerThrewSeed();
-        if(seedThrownID != 0 && readyToThrow)
+        if (seedThrownID != 0 && readyToThrow)
         {
             if (seedThrownID == 2)
             {
                 if (plantSeedUnlocked)
                 {
-                    Throw(seedThrownID);
+                    PlayThrowAnimation();
                 }
             }
-            else Throw(seedThrownID);
+            else PlayThrowAnimation();
         }
     }
 
-    private void Throw(int seedID)
+    private void PlayThrowAnimation()
+    {
+        switch (seedThrownID)
+        {
+            case 1:
+                handsAnimator.SetTrigger("Mushroom");
+                break;
+            case 2:
+                handsAnimator.SetTrigger("Plant");
+                break;
+            default:
+                break;
+        }
+    }
+    
+
+    public void Throw(int seedID)
     {
         readyToThrow = false;
 
