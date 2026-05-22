@@ -47,7 +47,7 @@ public class MusicManager : MonoBehaviour
     public IEnumerator FadeTrack(SoundChannel channel, float targetVolume)
     {
         string targetGroupVolume = groupVolumesID.GetValueOrDefault(channel);
-        float timeToFade = 1.25f;
+        float timeToFade = 2.25f;
         float elapsedTime = 0;
         mixer.GetFloat(targetGroupVolume, out float startVolume);
 

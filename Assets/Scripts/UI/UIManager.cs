@@ -56,11 +56,13 @@ public class UIManager : MonoBehaviour
     public void OpenPauseMenu()
     {
         OpenMenu(MenuState.PauseMenu);
+        Cursor.visible = true;
         Time.timeScale = 0f;
     }
 
     public void ClosePauseMenu()
     {
+        Cursor.visible = false;
         OpenMenu(MenuState.MainMenu);
         Time.timeScale = 1f;
     }

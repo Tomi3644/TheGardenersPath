@@ -54,19 +54,19 @@ public class MusicTransitions : MonoBehaviour
 
                 break;
             case Transitions.CaveEnter:
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, -80));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicCave, 0));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, -80));
 
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -70));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, 0));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -70));
 
                 break;
             case Transitions.CaveExit:
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicCave, -80));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, 0));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicCave, -80));
 
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
 
                 break;
             default:

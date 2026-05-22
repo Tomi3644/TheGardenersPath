@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
         controller = GetComponent<CharacterController>();
+        Cursor.visible = false;
     }
 
     void Update()
