@@ -22,25 +22,25 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 21300000, guid: 85053bff67762464593d769818d2cf64, type: 3}
-    - time: 0.05
+    - time: 0.06666667
       value: {fileID: 21300000, guid: 661cac4a98c39ef42be62efa7b10d934, type: 3}
-    - time: 0.11666667
+    - time: 0.15
       value: {fileID: 21300000, guid: e1744f0ca5c39ec49ab0eaaee2865dae, type: 3}
-    - time: 0.16666667
+    - time: 0.21666667
       value: {fileID: 21300000, guid: faf6e4c3f441fcc4d913b11fc3a74b3e, type: 3}
-    - time: 0.21666667
+    - time: 0.3
       value: {fileID: 21300000, guid: a4be4850bc534774cbd457da8673834f, type: 3}
-    - time: 0.21666667
+    - time: 0.3
       value: {fileID: 21300000, guid: bdba6a020f488a340859e09ccf8ac867, type: 3}
-    - time: 0.28333333
+    - time: 0.36666667
       value: {fileID: 21300000, guid: e2df9f8fc5269d94d8129cfc6b569a26, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: cb43ceb40e2d32644925b66a0065cbd3, type: 3}
-    - time: 0.38333333
-      value: {fileID: 21300000, guid: a4836cf42d342cb4b88338cf4a7a34a7, type: 3}
     - time: 0.45
+      value: {fileID: 21300000, guid: cb43ceb40e2d32644925b66a0065cbd3, type: 3}
+    - time: 0.51666665
+      value: {fileID: 21300000, guid: a4836cf42d342cb4b88338cf4a7a34a7, type: 3}
+    - time: 0.6
       value: {fileID: 21300000, guid: 654eefbd2cb4ae44690dee213babf81e, type: 3}
-    - time: 0.5
+    - time: 0.6666667
       value: {fileID: 21300000, guid: 601d79306635aa54ea3305ed1dbc68a5, type: 3}
     attribute: m_Sprite
     path: 
@@ -80,7 +80,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -100,7 +100,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.28333333
+  - time: 0.36666667
     functionName: OnThrowFrameAnim
     data: 
     objectReferenceParameter: {fileID: 0}
