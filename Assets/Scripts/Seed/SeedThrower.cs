@@ -18,8 +18,10 @@ public class SeedThrower : MonoBehaviour
     [Header("Seed Prefabs")]
     [SerializeField] private GameObject[] seedPrefabs;
 
-    [Header("Seed Music Transition")]
+    [Header("Seed Sound")]
     [SerializeField] private MusicTransitions transition;
+    [SerializeField] private AudioClip throwAudio;
+
 
     private bool plantSeedUnlocked;
     private int seedThrownID;
@@ -89,6 +91,7 @@ public class SeedThrower : MonoBehaviour
         Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
+        SFXManager.instance.PlaySFX(throwAudio);
 
         // implement throwCooldown
         Invoke(nameof(ResetThrow), throwCooldown);

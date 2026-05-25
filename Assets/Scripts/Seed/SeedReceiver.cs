@@ -27,6 +27,8 @@ public class SeedReceiver : MonoBehaviour
         {
             // ... the event will be called
             seedReaction.Invoke();
+            
+            SFXManager.instance.PlaySFX(SFXManager.instance.seedReceivedSFX);
         }
     }
 

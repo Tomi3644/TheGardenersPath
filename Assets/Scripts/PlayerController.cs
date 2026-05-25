@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float bounceHeight;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip mushroomBounceSFX;
+    private bool isWalking, isClimbing;
+
     private void Start()
     {
         gravityValue = normalGravity;
@@ -81,6 +85,7 @@ public class PlayerController : MonoBehaviour
                 playerVelocity.y = Mathf.Sqrt(bounceHeight * -2.0f * gravityValue);
                 canBounce = false;
                 bouncedThisFrame = true;
+                SFXManager.instance.PlaySFX(mushroomBounceSFX);
 
                 StartCoroutine(BounceWait());
             }
@@ -112,6 +117,42 @@ public class PlayerController : MonoBehaviour
         }
         else { gravityValue = normalGravity; }
         previousHeight = transform.position.y;
+
+        // Set booleans for SFX
+        if (playerVelocity.x != 0f || playerVelocity.z != 0f)
+        {
+            // Footsteps
+            if (!isOnLadder && isGrounded)
+            {
+                isWalking = true;
+                isClimbing = false;
+            }
+            else if (isOnLadder)
+            {
+                isWalking = false;
+                isClimbing = true;
+            }
+            else
+            {
+                isWalking = false;
+                isClimbing = false;
+            }
+        }
+        else
+        {
+            isWalking = false;
+            isClimbing = false;
+        }
+        if (isWalking != SFXManager.instance.walking)
+        {
+            SFXManager.instance.walking = isWalking;
+            if (isWalking == true && SFXManager.instance.footstepsCoroutineStarted == false) StartCoroutine(SFXManager.instance.FootstepsSFX());
+        }
+        if (isClimbing != SFXManager.instance.climbing)
+        {
+            SFXManager.instance.climbing = isClimbing;
+            if (isClimbing == true && SFXManager.instance.climbingCoroutineStarted == false) StartCoroutine(SFXManager.instance.ClimbingSFX());
+        }
         
         // Final movement
         controller.Move(playerVelocity * Time.deltaTime);
