@@ -754,10 +754,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 5826981185417878835}
   m_HandleRect: {fileID: 4903359354160457265}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1324144256812994190
 MonoBehaviour:
   m_ObjectHideFlags: 0
