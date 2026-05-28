@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class OpenSettings : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class OpenSettings : MonoBehaviour
     private void Start()
     {
         inputManager = InputManager.Instance;
-        inputManager.gameObject.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex == 0) inputManager.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,8 +21,14 @@ public class OpenSettings : MonoBehaviour
     {
         if (inputManager.OpeningSettingsMenu())
         {
-            pause.SetActive(true);
-            inputs.SetActive(false);
+            if (!UIManager.Instance.pauseMenu.activeSelf)
+            {
+                UIManager.Instance.OpenPauseMenu();
+            }
+            else
+            {
+                UIManager.Instance.ClosePauseMenu();
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum MenuState
 {
@@ -13,9 +15,11 @@ public class UIManager : MonoBehaviour
 
     [Header("Menus")]
     [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject pauseMenu;
+    public GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
 
+    [Header("Objects")]
+    [SerializeField] private CinemachinePanTilt cameraController;
     private MenuState currentMenu;
     private MenuState previousMenu;
 
@@ -26,7 +30,17 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        OpenMenu(MenuState.MainMenu);
+        if(SceneManager.GetActiveScene().buildIndex == 0) OpenMenu(MenuState.MainMenu);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     // 🔁 Fonction centrale pour changer de menu
@@ -44,12 +58,14 @@ public class UIManager : MonoBehaviour
     public void OpenSettings()
     {
         OpenMenu(MenuState.Settings);
+        Cursor.visible = true;
     }
 
     // 🔙 Bouton retour dans Settings
     public void CloseSettings()
     {
         OpenMenu(previousMenu);
+        Cursor.visible = true;
     }
 
     // ⏸ Exemple pour ouvrir pause menu (ESC)
@@ -58,12 +74,14 @@ public class UIManager : MonoBehaviour
         OpenMenu(MenuState.PauseMenu);
         Cursor.visible = true;
         Time.timeScale = 0f;
+        cameraController.enabled = false;
     }
 
     public void ClosePauseMenu()
     {
         Cursor.visible = false;
-        OpenMenu(MenuState.MainMenu);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        cameraController.enabled = true;
     }
 }
