@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mesh_blend_mat_rock 1
+  m_Name: Mesh_blend_mat_dirt
   m_Shader: {fileID: 4800000, guid: 754aed20ff4dcf2498326cccc57ab676, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -32,53 +32,53 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RockAO:
-        m_Texture: {fileID: 2800000, guid: 726229147921df64b8c16ade6f29e160, type: 3}
+        m_Texture: {fileID: 2800000, guid: fcd07bdcf9e1350468a9de66b98fb94c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RockHeight:
-        m_Texture: {fileID: 2800000, guid: ce0dd3c20f21ee24c8202d8e0becc367, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2251a6ed9e586204f875c6c3ae804ae9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RockNormal:
-        m_Texture: {fileID: 2800000, guid: 2227114e5a626364392292d2aa8b62af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b37e4225165b584bae75aeee58604bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RockTex:
-        m_Texture: {fileID: 2800000, guid: 590a4170b76f8454e9e7cbf446ff1eac, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6b51e17413210914b92115096a89a12b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TerrainAO:
-        m_Texture: {fileID: 2800000, guid: 726229147921df64b8c16ade6f29e160, type: 3}
+        m_Texture: {fileID: 2800000, guid: fcd07bdcf9e1350468a9de66b98fb94c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TerrainHeightMap:
-        m_Texture: {fileID: 2800000, guid: ce0dd3c20f21ee24c8202d8e0becc367, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2251a6ed9e586204f875c6c3ae804ae9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TerrainNormal:
-        m_Texture: {fileID: 2800000, guid: 2227114e5a626364392292d2aa8b62af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b37e4225165b584bae75aeee58604bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TerrainTex:
-        m_Texture: {fileID: 2800000, guid: 590a4170b76f8454e9e7cbf446ff1eac, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6b51e17413210914b92115096a89a12b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOStrength: -0.29
-    - _BlendDistance: 4.77
-    - _Brightness: -0.504
+    - _AOStrength: -3.19
+    - _BlendDistance: 1.29
+    - _Brightness: -0.004
     - _ContactSoftness: 2.02
-    - _Contrast: 0.557
-    - _DitherStrength: 0.16
+    - _Contrast: 1.013
+    - _DitherStrength: -0.05
     - _GroundTiling: 1
-    - _HeightStrength: -10.92
+    - _HeightStrength: -0.29
     - _MossStrength: 0.6
-    - _RockTiling: 0.31
-    - _Saturation: 0.814
+    - _RockTiling: 4.71
+    - _Saturation: 0.822
     - _SlopeStrength: 2.47
-    - _TerrainHeight: 0
-    - _TerrainTiling: 0.3
+    - _TerrainHeight: 1.18
+    - _TerrainTiling: -0.16
     m_Colors:
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
