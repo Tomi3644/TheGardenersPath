@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 5011944055772077037}
   - component: {fileID: 2125195016465871977}
   m_Layer: 0
-  m_Name: ExitButton
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
