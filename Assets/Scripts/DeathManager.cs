@@ -4,7 +4,7 @@ using UnityEngine.Animations;
 
 public class DeathManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> respawnPoints = new List<GameObject>();
+    [SerializeField] private GameObject lastRespawnPoint;
     private CapsuleCollider capsuleCollider;
     private CharacterController characterController;
 
@@ -18,18 +18,7 @@ public class DeathManager : MonoBehaviour
     {
         if (other.tag == "Respawn")
         {
-            bool isSaved = false;
-            foreach (GameObject point in respawnPoints)
-            {
-                if (point == other.gameObject)
-                {
-                    isSaved = true;
-                }
-            }
-            if (!isSaved)
-            {
-                respawnPoints.Add(other.gameObject);
-            }
+            lastRespawnPoint = other.gameObject;
         }
         else if (other.tag == "Death")
         {
@@ -40,22 +29,10 @@ public class DeathManager : MonoBehaviour
 
     private void Respawn()
     {
-        GameObject closestObject = null;
-        float minDist = Mathf.Infinity;
-        Vector3 currentPos = transform.position;
-        foreach (GameObject point in respawnPoints)
-        {
-            float dist = Vector3.Distance(point.transform.position, currentPos);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                closestObject = point;
-            }
-        }
         capsuleCollider.enabled = false;
         characterController.enabled = false;
 
-        transform.position = closestObject.transform.position;
+        transform.position = lastRespawnPoint.transform.position;
 
         capsuleCollider.enabled = true;
         characterController.enabled = true;
