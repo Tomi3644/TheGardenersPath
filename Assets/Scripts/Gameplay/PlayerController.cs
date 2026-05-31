@@ -2,6 +2,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,9 +30,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float bounceHeight;
 
-    [Header("SFX")]
+    [Header("Sounds")]
     [SerializeField] private AudioClip mushroomBounceSFX;
     private bool isWalking, isClimbing;
+    [SerializeField] private GameObject creditsTransition;
+    public UnityEvent endDeactivation;
 
     private void Start()
     {
@@ -176,6 +179,12 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Ladder")
         {
             isOnLadder = true;
+        }
+        else if (other.tag == "Finish")
+        {
+            creditsTransition.SetActive(true);
+            SFXManager.instance.walking = false;
+            endDeactivation.Invoke();
         }
     }
     void OnTriggerExit(Collider other)

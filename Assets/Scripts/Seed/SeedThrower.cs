@@ -72,7 +72,13 @@ public class SeedThrower : MonoBehaviour
         readyToThrow = false;
 
         // instantiate object to throw
-        GameObject projectile = Instantiate(seedPrefabs[seedID - 1], attackPoint.position, cam.rotation);
+        Vector3 spawnPos = attackPoint.position + cam.forward * 0.5f;
+
+        GameObject projectile = Instantiate(
+            seedPrefabs[seedID - 1],
+            spawnPos,
+            cam.rotation
+        );
 
         // get rigidbody component
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
