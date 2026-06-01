@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1532946377}
     m_Modifications:
+    - target: {fileID: 2495654261591511413, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6187789220736187420, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
       propertyPath: m_Name
       value: Ladder
@@ -262,6 +266,10 @@ PrefabInstance:
     - target: {fileID: 4566930794319703401, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
       propertyPath: m_Name
       value: DeathZone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402982873675128051, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2581,6 +2589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.493055
@@ -3206,6 +3218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathZone
       objectReference: {fileID: 0}
+    - target: {fileID: 7402982873675128051, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3219,6 +3235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 230383204}
     m_Modifications:
+    - target: {fileID: 2495654261591511413, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6187789220736187420, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
       propertyPath: m_Name
       value: Ladder
@@ -3568,6 +3588,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4063840421295485151, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7559593253425179522, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
       propertyPath: m_Name
       value: BounceMushroom 2
@@ -3843,6 +3867,10 @@ PrefabInstance:
     - target: {fileID: 1555207420857478353, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_Name
       value: RespawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
@@ -4310,6 +4338,10 @@ PrefabInstance:
     - target: {fileID: 1555207420857478353, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_Name
       value: RespawnPoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
@@ -4937,6 +4969,10 @@ PrefabInstance:
     - target: {fileID: 4566930794319703401, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
       propertyPath: m_Name
       value: DeathZone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402982873675128051, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6792,6 +6828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnPoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6133163
@@ -7226,6 +7266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 230383204}
     m_Modifications:
+    - target: {fileID: 2495654261591511413, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6187789220736187420, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
       propertyPath: m_Name
       value: Ladder
@@ -7307,6 +7351,10 @@ PrefabInstance:
     - target: {fileID: 1555207420857478353, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_Name
       value: RespawnPoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
@@ -8420,6 +8468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnPoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 18.036943
@@ -8581,6 +8633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnPoint (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 35.35827
@@ -8680,6 +8736,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705917480902872839, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063840421295485151, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7559593253425179522, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
@@ -9007,6 +9067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathZone (1) (not usable)
       objectReference: {fileID: 0}
+    - target: {fileID: 7402982873675128051, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9076,6 +9140,10 @@ PrefabInstance:
     - target: {fileID: 4566930794319703401, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
       propertyPath: m_Name
       value: DeathZone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402982873675128051, guid: 927f4a3d7ebe635408f310999f0d25fd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9223,6 +9291,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4063840421295485151, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7559593253425179522, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
       propertyPath: m_Name
       value: BounceMushroom 3
@@ -9288,6 +9360,10 @@ PrefabInstance:
     - target: {fileID: 1555207420857478353, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_Name
       value: RespawnPoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521402978063170626, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979266434495126232, guid: 0db63525fc3e6304aa405c4f412e25b8, type: 3}
       propertyPath: m_LocalScale.x
@@ -9684,6 +9760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1532946377}
     m_Modifications:
+    - target: {fileID: 2495654261591511413, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6187789220736187420, guid: 5aeb2a02ae693cf4b87329ba6a88507c, type: 3}
       propertyPath: m_Name
       value: Ladder
@@ -10259,6 +10339,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 230383204}
     m_Modifications:
+    - target: {fileID: 4063840421295485151, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7559593253425179522, guid: 96c1277833183d84b8cf614b52651d6f, type: 3}
       propertyPath: m_Name
       value: BounceMushroom 1
