@@ -8,7 +8,8 @@ public enum Transitions
     SeedEnd,
     RiverBegin,
     CaveEnter,
-    CaveExit
+    CaveExit,
+    GameEnd
 };
 
 public class MusicTransitions : MonoBehaviour
@@ -68,6 +69,12 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
 
+                break;
+            case Transitions.GameEnd:
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, -80));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -80));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.ForestAmbiance, -80));
+                
                 break;
             default:
                 break;
