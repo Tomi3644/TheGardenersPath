@@ -777,7 +777,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8883802416886300369}
         m_TargetAssemblyTypeName: SoundSlider, Assembly-CSharp
-        m_MethodName: SetSFXVolume
+        m_MethodName: SetSliderVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -800,6 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 2
 --- !u!1 &1897114516010216767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1684,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6056130057236272718}
         m_TargetAssemblyTypeName: SoundSlider, Assembly-CSharp
-        m_MethodName: SetAmbianceVolume
+        m_MethodName: SetSliderVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 1
 --- !u!1 &4446623573457970083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2088,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1633898336342991599}
         m_TargetAssemblyTypeName: SoundSlider, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetSliderVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2109,6 +2111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 0
 --- !u!1 &5615921051429589513
 GameObject:
   m_ObjectHideFlags: 0
