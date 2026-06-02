@@ -574,7 +574,7 @@ MonoBehaviour:
     - name: tree random
       settings:
         brushRadius: 5.9484143
-        brushSpacing: 3
+        brushSpacing: 0.01
         brushOverlapCheckMode: 0
         brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
@@ -591,8 +591,8 @@ MonoBehaviour:
         randomizeOrientationZ: 5
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 0.8
-        scaleUniformMax: 1.3
+        scaleUniformMin: 0.5
+        scaleUniformMax: 1.5
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -696,18 +696,18 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 142772, guid: 8e66ff4afa28c4be7821a9ae9372d1f7, type: 3}
-      - gameObject: {fileID: 100618, guid: e07b9ca3ecaff4d4fbf82c30d96cf38b, type: 3}
-      - gameObject: {fileID: 178792, guid: 0dd60fda408f047bfb07894449319218, type: 3}
-      - gameObject: {fileID: 131906, guid: ba260558c316b4cda92178dc6fef1161, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 6
-      selected: 0
+      - gameObject: {fileID: 7629137116735046702, guid: b583e6029c6327b46bfcc5bcfa915011, type: 3}
+      - gameObject: {fileID: 8455980799546971323, guid: 5ce249d76c674cd4fb7d081c232b03f4, type: 3}
+      - gameObject: {fileID: 7567787509871374366, guid: 03c78ab7867b61a478a2c3216a498781, type: 3}
+      - gameObject: {fileID: 5758812197886870612, guid: a0b08089c104b9f44a072ffcf21fab39, type: 3}
+      - gameObject: {fileID: 919132149155446097, guid: aed49c93ec3a33a42bd8067ba222d938, type: 3}
+      - gameObject: {fileID: 919132149155446097, guid: 987ed1d5d0eb9144c81425cbd945c091, type: 3}
+      - gameObject: {fileID: 919132149155446097, guid: a848d031f80783a45bfc101ec32e33b4, type: 3}
+      - gameObject: {fileID: 919132149155446097, guid: 6190f9a8d89a39f4d98fc0769b527fd5, type: 3}
+      - gameObject: {fileID: 4524541740455594723, guid: 4e05f2e7e43c62945b5f1466199d8952, type: 3}
+      - gameObject: {fileID: 5910433950230404208, guid: 3064614a0202def479a53c150d8a39db, type: 3}
+      selectedSlot: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     levelsGamma: 1
@@ -3634,8 +3634,8 @@ MonoBehaviour:
     levelsInWhite: 255
     levelsOutBlack: 0
     levelsOutWhite: 255
-  activeTab: 4
-  paintOnSelected: 0
+  activeTab: 0
+  paintOnSelected: 1
   paintLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -3651,11 +3651,11 @@ MonoBehaviour:
   pinSnapScale: 0
   placeAngleStep: 15
   placeScaleStep: 0.1
-  eraseBrushRadius: 5
+  eraseBrushRadius: 0.01
   eraseByLayer: 1
   eraseLayers:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 128
   selectBrushRadius: 5
   selectByLayer: 0
   selectLayers:
