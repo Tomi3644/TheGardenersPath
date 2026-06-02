@@ -3,30 +3,19 @@ using UnityEngine;
 
 public class CaveLightFader : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    [SerializeField] private float fadeTime;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cave")
         {
-            StartCoroutine(FadeIntensity(1f, 0f, 3f));
+            StartCoroutine(FadeIntensity(1f, 0f, fadeTime));
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Cave")
         {
-            StartCoroutine(FadeIntensity(0f, 1f, 3f));
+            StartCoroutine(FadeIntensity(0f, 1f, fadeTime));
         }
     }
 
