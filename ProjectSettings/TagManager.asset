@@ -10,8 +10,7 @@ TagManager:
   - PlantSeedGet
   - MushroomSeed
   - PlantSeed
-  - Seed3
-  - Seed4
+  - Cave
   layers:
   - Default
   - TransparentFX
