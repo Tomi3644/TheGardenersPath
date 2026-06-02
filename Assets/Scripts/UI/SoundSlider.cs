@@ -1,24 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SoundSlider : MonoBehaviour
 {
+    public enum SliderType
+    {
+        Music,
+        Ambiance,
+        SFX
+    }
+
+    private Dictionary<SliderType, string> slidersDict = new Dictionary<SliderType, string>
+    {
+        [SliderType.Music] = "GeneralMusic",
+        [SliderType.Ambiance] = "GeneralAmbiance",
+        [SliderType.SFX] = "GeneralSFX"
+    };
+
     public AudioMixer AudioMixer;
+    [SerializeField] private SliderType sliderType;
 
-    public void SetMusicVolume (float volume)
+    private void Start()
     {
-        AudioMixer.SetFloat("GeneralMusic", volume);
+        AudioMixer.GetFloat(slidersDict[sliderType], out float volume);
+        GetComponent<Slider>().value = volume;
     }
-
-    public void SetAmbianceVolume (float volume)
+    public void SetSliderVolume(float volume)
     {
-        AudioMixer.SetFloat("GeneralAmbiance", volume);
-    }
-
-    public void SetSFXVolume (float volume)
-    {
-        AudioMixer.SetFloat("GeneralSFX", volume);
+        AudioMixer.SetFloat(slidersDict[sliderType], volume);
     }
 }

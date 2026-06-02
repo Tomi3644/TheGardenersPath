@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 392994388510736359}
   - component: {fileID: 1589236742243373102}
   - component: {fileID: 4118567566478561252}
+  - component: {fileID: 8224521038469847391}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -407,6 +408,11 @@ MonoBehaviour:
   normalGravity: -9.81
   fallGravity: -30
   bounceHeight: 2
+  mushroomBounceSFX: {fileID: 0}
+  creditsTransition: {fileID: 0}
+  endDeactivation:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &392994388510736359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +428,7 @@ MonoBehaviour:
   cam: {fileID: 248636901774150455}
   attackPoint: {fileID: 5738833077440911798}
   objectToThrow: {fileID: 5718402063804766434, guid: 758fc626bcabe8641941d9b6c892ce8a, type: 3}
+  handsAnimator: {fileID: 0}
   throwCooldown: 1
   throwForce: 18
   throwUpwardForce: 1
@@ -431,6 +438,7 @@ MonoBehaviour:
   - {fileID: 5718402063804766434, guid: 867c2387ad178a942aff30dcba7d0b83, type: 3}
   - {fileID: 5718402063804766434, guid: 8747181dc4f3dbf4da2799573abddca5, type: 3}
   transition: {fileID: 0}
+  throwAudio: {fileID: 0}
 --- !u!114 &1589236742243373102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,8 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655b93f771726a94696418a1dbe79fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathManager
-  respawnPoints:
-  - {fileID: 0}
+  lastRespawnPoint: {fileID: 0}
 --- !u!136 &4118567566478561252
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -468,6 +475,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8224521038469847391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531238887675582196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0090e52bdd5be9409edb9f96962c376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaveLightFader
+  fadeTime: 5.5
 --- !u!1 &7687529932820325136
 GameObject:
   m_ObjectHideFlags: 0
