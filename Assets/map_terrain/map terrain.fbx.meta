@@ -3,7 +3,27 @@ guid: c31dbf40bb77ed249aa33dc9361112da
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: All Terrain
+    second: {fileID: 2100000, guid: 41208d4f878e9374f8a25e183625d03b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: All Terrain Past River
+    second: {fileID: 2100000, guid: 58bc0e2d452c3b142a6ec72350bb43e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cave Path and Pillars
+    second: {fileID: 2100000, guid: f4a4974690278e5489baf27ded8ff13f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls and Dome
+    second: {fileID: 2100000, guid: 0a26dcf1bb95c9e429a34215eca52ef5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
