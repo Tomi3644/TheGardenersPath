@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a01de4bee4cfc048bdfc10d04fbf587
+guid: fb9b32608146b4144b1d3badcee14c91
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,7 +7,12 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: branche_01
+      name: UV TEST
+    second: {fileID: 2100000, guid: 80ccc55e3a433294ea5b5b1f324dcaa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: branche_01.007
     second: {fileID: 2100000, guid: 404425def07fd954c945af80d7940e8f, type: 2}
   materials:
     materialImportMode: 2
