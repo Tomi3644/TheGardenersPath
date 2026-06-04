@@ -573,7 +573,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree random
       settings:
-        brushRadius: 5.9484143
+        brushRadius: 1.1
         brushSpacing: 0.01
         brushOverlapCheckMode: 0
         brushOverlapDistance: 5
