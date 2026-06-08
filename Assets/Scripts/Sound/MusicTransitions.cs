@@ -71,9 +71,7 @@ public class MusicTransitions : MonoBehaviour
 
                 break;
             case Transitions.GameEnd:
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, -80));
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -80));
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.ForestAmbiance, -80));
+                StartCoroutine(musicManager.FadeAllSources());
                 
                 break;
             default:

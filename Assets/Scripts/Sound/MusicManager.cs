@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioSource musicSourceMain;
     [SerializeField] private AudioSource musicSourceCave;
     [SerializeField] private AudioSource forestAmbianceSource;
+    [SerializeField] private AudioSource[] allSources;
 
     [Header("Others")]
     [SerializeField] private AudioMixer mixer;
@@ -55,6 +56,22 @@ public class MusicManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             mixer.SetFloat(targetGroupVolume, Mathf.Lerp(startVolume, targetVolume, elapsedTime / timeToFade));
+            yield return null;
+        }
+        yield break;
+    }
+    public IEnumerator FadeAllSources()
+    {
+        float timeToFade = 2.25f;
+        float elapsedTime = 0;
+
+        while (elapsedTime < timeToFade)
+        {
+            elapsedTime += Time.deltaTime;
+            foreach (var source in allSources)
+            {
+                source.volume = Mathf.Lerp(1f, 0f, elapsedTime / timeToFade);
+            }
             yield return null;
         }
         yield break;

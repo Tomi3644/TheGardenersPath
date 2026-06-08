@@ -4,9 +4,10 @@ using UnityEngine;
 public class CaveLightFader : MonoBehaviour
 {
     [SerializeField] private float fadeTime;
+    [SerializeField] private DeathManager deathManager;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Cave")
+        if (other.tag == "Cave" && deathManager.hasRespawnedThisFrame == false)
         {
             StartCoroutine(FadeIntensity(1f, 0f, fadeTime));
         }

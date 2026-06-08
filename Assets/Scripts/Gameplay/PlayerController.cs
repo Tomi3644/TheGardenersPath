@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
             SFXManager.instance.climbing = isClimbing;
             if (isClimbing == true && SFXManager.instance.climbingCoroutineStarted == false) StartCoroutine(SFXManager.instance.ClimbingSFX());
         }
-        
+
         // Final movement
         controller.Move(playerVelocity * Time.deltaTime);
     }
