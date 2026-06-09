@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 0
 --- !u!1 &753439516545678390
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +866,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 5004607879151480708}
   settingsMenu: {fileID: 2622699934067772946}
   cameraController: {fileID: 0}
+  firstSettingsButton: {fileID: 0}
+  firstMainButton: {fileID: 0}
 --- !u!1 &902342489979931344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 0
 --- !u!1 &1371255863173724144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,6 +4554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSlider
   AudioMixer: {fileID: 24100000, guid: ef38574db112c754f99acb97da063702, type: 2}
+  sliderType: 0
 --- !u!1 &8287939354656055575
 GameObject:
   m_ObjectHideFlags: 0
