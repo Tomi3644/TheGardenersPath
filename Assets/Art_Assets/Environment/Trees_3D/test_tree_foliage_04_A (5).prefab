@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &334056922175526954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.7906547
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.6189537
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.075908
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.864594
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.087714
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.534108
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25455105
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.21385054
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9426767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.028849568
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10.364
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 136.72
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.978
+      objectReference: {fileID: 0}
+    - target: {fileID: -3423672180702240762, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 93afe94d774c81345960b17e9fc12e1f, type: 2}
+    - target: {fileID: 919132149155446097, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: m_Name
+      value: test_tree_foliage_04_A (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349200244140212583, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 50728f868991cb14cb3c5c338e682bec, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1bd59aeafd086a2449412d6c19fc5fc6, type: 3}
