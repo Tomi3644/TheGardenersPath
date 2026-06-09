@@ -1,6 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum MenuState
 {
@@ -22,6 +23,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CinemachinePanTilt cameraController;
     private MenuState currentMenu;
     private MenuState previousMenu;
+    [SerializeField] private Button firstSettingsButton;
+    [SerializeField] private Button firstMainButton;
 
     private void Awake()
     {
@@ -65,6 +68,7 @@ public class UIManager : MonoBehaviour
     {
         OpenMenu(MenuState.Settings);
         Cursor.visible = true;
+        firstSettingsButton.Select();
     }
 
     // 🔙 Bouton retour dans Settings
@@ -72,6 +76,7 @@ public class UIManager : MonoBehaviour
     {
         OpenMenu(previousMenu);
         Cursor.visible = true;
+        firstMainButton.Select();
     }
 
     // ⏸ Exemple pour ouvrir pause menu (ESC)
