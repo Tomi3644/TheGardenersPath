@@ -9,7 +9,9 @@ public class SFXManager : MonoBehaviour
     [SerializeField] private AudioSource normalSource;
     [SerializeField] private AudioSource movementSource;
     public AudioClip seedReceivedSFX;
-    [SerializeField] private AudioClip footstepsSFX;
+    [SerializeField] private AudioClip grassFootsteps;
+    [SerializeField] private AudioClip caveFootsteps;
+    private AudioClip currentFootsteps;
     [SerializeField] private AudioClip climbingSFX;
     [SerializeField] private float timeBetweenSFX;
     public bool walking, climbing, footstepsCoroutineStarted, climbingCoroutineStarted;
@@ -17,6 +19,7 @@ public class SFXManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        currentFootsteps = grassFootsteps;
     }
 
     public void PlaySFX(AudioClip clip)
@@ -35,7 +38,7 @@ public class SFXManager : MonoBehaviour
         footstepsCoroutineStarted = true;
         while (walking)
         {
-            PlayMovementSFX(footstepsSFX);
+            PlayMovementSFX(currentFootsteps);
             yield return new WaitForSeconds(timeBetweenSFX);
         }
         footstepsCoroutineStarted = false;
@@ -49,5 +52,10 @@ public class SFXManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenSFX);
         }
         climbingCoroutineStarted = false;
+    }
+    public void SwitchFootsteps()
+    {
+        if (currentFootsteps == grassFootsteps) currentFootsteps = caveFootsteps;
+        else currentFootsteps = grassFootsteps;
     }
 }

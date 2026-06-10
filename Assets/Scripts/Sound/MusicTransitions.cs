@@ -61,6 +61,8 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, 0));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -70));
 
+                SFXManager.instance.SwitchFootsteps();
+
                 break;
             case Transitions.CaveExit:
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, 0));
@@ -68,6 +70,8 @@ public class MusicTransitions : MonoBehaviour
 
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
+
+                SFXManager.instance.SwitchFootsteps();
 
                 break;
             case Transitions.GameEnd:
