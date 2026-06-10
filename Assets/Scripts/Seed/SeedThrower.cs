@@ -7,6 +7,7 @@ public class SeedThrower : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private GameObject objectToThrow;
     [SerializeField] private Animator handsAnimator;
+    [SerializeField] private Animator seedGetUIAnimator;
 
     [Header("Settings")]
     [SerializeField] private float throwCooldown;
@@ -21,12 +22,14 @@ public class SeedThrower : MonoBehaviour
     [Header("Seed Sound")]
     [SerializeField] private MusicTransitions transition;
     [SerializeField] private AudioClip throwAudio;
+    [SerializeField] private AudioClip seedGet;
 
 
     private bool plantSeedUnlocked;
     private int seedThrownID;
 
     private bool readyToThrow;
+    private bool alreadyThrewPlant;
     private InputManager inputManager;
 
     private void Start()
@@ -44,6 +47,11 @@ public class SeedThrower : MonoBehaviour
             {
                 if (plantSeedUnlocked)
                 {
+                    if (!alreadyThrewPlant)
+                    {
+                        alreadyThrewPlant = true;
+                        seedGetUIAnimator.SetTrigger("Threw");
+                    }
                     PlayThrowAnimation();
                 }
             }
@@ -113,8 +121,10 @@ public class SeedThrower : MonoBehaviour
         if (other.tag == "PlantSeedGet")
         {
             plantSeedUnlocked = true;
+            SFXManager.instance.PlaySFX(seedGet);
             transition.MakeTransition();
             Destroy(other.gameObject);
+            seedGetUIAnimator.gameObject.SetActive(true);
         }
     }
 }
