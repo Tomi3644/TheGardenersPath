@@ -93055,9 +93055,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: fdd283683c435e149b5f7442cc9413b6, type: 2}
     - target: {fileID: -2134553963648991332, guid: c31dbf40bb77ed249aa33dc9361112da, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2134553963648991332, guid: c31dbf40bb77ed249aa33dc9361112da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2134553963648991332, guid: c31dbf40bb77ed249aa33dc9361112da, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 14e27b738c8c5fb428ce69f3fc36530b, type: 2}
+      objectReference: {fileID: 2100000, guid: 2a7c62e82ce521048896ed880c93655c, type: 2}
     - target: {fileID: 919132149155446097, guid: c31dbf40bb77ed249aa33dc9361112da, type: 3}
       propertyPath: m_Name
       value: map terrain
