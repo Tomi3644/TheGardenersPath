@@ -63,7 +63,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 128
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7f10549ef5edac945ae90b03cfad7832, type: 2}
@@ -153,7 +153,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 128
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c1e550ddad538454a95d0c0a20917401, type: 2}
@@ -280,7 +280,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 128
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d380d580fb165e44fb8046636f0e460e, type: 2}
@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.065
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 122696ceb9cb99042a3e90442537ea60, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 122696ceb9cb99042a3e90442537ea60, type: 3}
       propertyPath: m_Name
       value: SM_Platform_01
@@ -441,6 +445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 308.315
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cde1e7addd08f124d9d3b6b3a1896eae, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cde1e7addd08f124d9d3b6b3a1896eae, type: 3}
       propertyPath: m_Name
       value: SM_Lumino_01
@@ -514,6 +522,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 64e32d4743030864e8ef48164da3dce3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 9.109
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 64e32d4743030864e8ef48164da3dce3, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 64e32d4743030864e8ef48164da3dce3, type: 3}
       propertyPath: m_Name

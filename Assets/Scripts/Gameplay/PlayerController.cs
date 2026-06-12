@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float fallGravity;
     [SerializeField]
     private float bounceHeight;
+    [SerializeField]
+    private float groundSphereSize;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip mushroomBounceSFX;
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
         gravityValue = normalGravity;
 
         // Check if player on the ground
-        isGrounded = Physics.SphereCast(transform.position, 0.4f, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
+        isGrounded = Physics.SphereCast(transform.position, groundSphereSize, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
 
         // Get player inputs and move accordingly
         // If on ladder, player goes up

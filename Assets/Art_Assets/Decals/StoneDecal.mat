@@ -125,7 +125,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Emissive_On: 1
-    - _Emissive_Strenght: 0.88
+    - _Emissive_Strenght: 0.1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
