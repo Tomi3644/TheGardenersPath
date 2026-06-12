@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material_shader_terrain
+  m_Name: Material_Path_And_Pillars
   m_Shader: {fileID: 4800000, guid: e7cd99cb82436e44db09cd209be827c6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _LEGACY_COLOR_MASK
+  m_InvalidKeywords:
   - _USE_NORMALS
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Control:
-        m_Texture: {fileID: 2800000, guid: 6bebbba140348c745bd7c47ffe3ed3c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: a0d7b3b93b40496449d64bb626a0b239, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtAO:
@@ -143,24 +143,36 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOStrength: 1
+    - _AOStrength: 0.597
     - _ColorMaskSoftness: 1
+    - _DirtBrightness: 1
+    - _DirtHue: 0
+    - _DirtSaturation: 1
     - _DirtSmoothness: 0.25
+    - _GrassBrightness: 1
+    - _GrassHue: 0
+    - _GrassSaturation: 1
     - _GrassSmoothness: 0.35
-    - _HeightBlend: 0.5
-    - _HeightStrength: 2
+    - _HeightBlend: 1
+    - _HeightStrength: 1.84
     - _LegacyColorMask: 1
     - _MetallicStrength: 1
+    - _MossBrightness: 1
+    - _MossHue: 0
+    - _MossSaturation: 1
     - _MossSmoothness: 0.45
     - _NormalScale: 2
-    - _RoughnessStrength: 0.766
+    - _RoughnessStrength: 0.469
+    - _StoneBrightness: 1
+    - _StoneHue: 0
+    - _StoneSaturation: 1
     - _StoneSmoothness: 0.4
     - _UseHeightBlend: 0
     - _UseNormals: 1
     m_Colors:
     - _DirtTilingOffset: {r: 7, g: 7, b: 0, a: 0}
     - _GrassTilingOffset: {r: 25, g: 25, b: 0, a: 0}
-    - _MossTilingOffset: {r: 25, g: 25, b: 0, a: 0}
-    - _StoneTilingOffset: {r: 8, g: 8, b: 0, a: 0}
+    - _MossTilingOffset: {r: 50, g: 50, b: 0, a: 0}
+    - _StoneTilingOffset: {r: 10, g: 10, b: 2, a: 2}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

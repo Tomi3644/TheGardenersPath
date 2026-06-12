@@ -16,6 +16,9 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _StoneHeight("Stone Height", 2D) = "black" {}
         _StoneAO("Stone AO", 2D) = "white" {}
         _StoneTilingOffset("Stone Tiling Offset", Vector) = (8,8,0,0)
+        _StoneHue("Stone Hue", Range(-0.5,0.5)) = 0
+        _StoneSaturation("Stone Saturation", Range(0,2)) = 1
+        _StoneBrightness("Stone Brightness", Range(0,2)) = 1
 
         [Header(Dirt Yellow)]
         _DirtBase("Dirt Base Color", 2D) = "white" {}
@@ -24,6 +27,9 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _DirtHeight("Dirt Height", 2D) = "black" {}
         _DirtAO("Dirt AO", 2D) = "white" {}
         _DirtTilingOffset("Dirt Tiling Offset", Vector) = (8,8,0,0)
+        _DirtHue("Dirt Hue", Range(-0.5,0.5)) = 0
+        _DirtSaturation("Dirt Saturation", Range(0,2)) = 1
+        _DirtBrightness("Dirt Brightness", Range(0,2)) = 1
 
         [Header(Grass Green)]
         _GrassBase("Grass Base Color", 2D) = "white" {}
@@ -32,6 +38,9 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _GrassHeight("Grass Height", 2D) = "black" {}
         _GrassAO("Grass AO", 2D) = "white" {}
         _GrassTilingOffset("Grass Tiling Offset", Vector) = (8,8,0,0)
+        _GrassHue("Grass Hue", Range(-0.5,0.5)) = 0
+        _GrassSaturation("Grass Saturation", Range(0,2)) = 1
+        _GrassBrightness("Grass Brightness", Range(0,2)) = 1
 
         [Header(Moss Blue)]
         _MossBase("Moss Base Color", 2D) = "white" {}
@@ -40,6 +49,9 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _MossHeight("Moss Height", 2D) = "black" {}
         _MossAO("Moss AO", 2D) = "white" {}
         _MossTilingOffset("Moss Tiling Offset", Vector) = (8,8,0,0)
+        _MossHue("Moss Hue", Range(-0.5,0.5)) = 0
+        _MossSaturation("Moss Saturation", Range(0,2)) = 1
+        _MossBrightness("Moss Brightness", Range(0,2)) = 1
 
         [Header(Global)]
         _NormalScale("Normal Scale", Range(0,2)) = 1
@@ -137,6 +149,22 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 float4 _GrassTilingOffset;
                 float4 _MossTilingOffset;
 
+                float _StoneHue;
+                float _StoneSaturation;
+                float _StoneBrightness;
+
+                float _DirtHue;
+                float _DirtSaturation;
+                float _DirtBrightness;
+
+                float _GrassHue;
+                float _GrassSaturation;
+                float _GrassBrightness;
+
+                float _MossHue;
+                float _MossSaturation;
+                float _MossBrightness;
+
                 float _NormalScale;
                 float _RoughnessStrength;
                 float _AOStrength;
@@ -192,6 +220,36 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 return NormalizeWeights(weights);
             }
 
+            float3 RGBToHSV(float3 c)
+            {
+                float4 K = float4(0.0, -0.3333333, 0.6666667, -1.0);
+                float4 p = lerp(float4(c.bg, K.wz), float4(c.gb, K.xy), step(c.b, c.g));
+                float4 q = lerp(float4(p.xyw, c.r), float4(c.r, p.yzx), step(p.x, c.r));
+
+                float d = q.x - min(q.w, q.y);
+                float e = 0.0000001;
+
+                return float3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+            }
+
+            float3 HSVToRGB(float3 c)
+            {
+                float4 K = float4(1.0, 0.6666667, 0.3333333, 3.0);
+                float3 p = abs(frac(c.xxx + K.xyz) * 6.0 - K.www);
+                return c.z * lerp(K.xxx, saturate(p - K.xxx), c.y);
+            }
+
+            float3 ApplyHSB(float3 color, float hue, float saturation, float brightness)
+            {
+                float3 hsv = RGBToHSV(saturate(color));
+
+                hsv.x = frac(hsv.x + hue);
+                hsv.y = saturate(hsv.y * saturation);
+                hsv.z = saturate(hsv.z * brightness);
+
+                return HSVToRGB(hsv);
+            }
+
             float3 BlendNormalTS(float4 w, float2 uvStone, float2 uvDirt, float2 uvGrass, float2 uvMoss)
             {
                 float3 n0 = UnpackNormalScale(SAMPLE_TEXTURE2D(_StoneNormal, sampler_StoneBase, uvStone), _NormalScale);
@@ -240,6 +298,11 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 float4 c1 = SAMPLE_TEXTURE2D(_DirtBase,  sampler_StoneBase, uvDirt);
                 float4 c2 = SAMPLE_TEXTURE2D(_GrassBase, sampler_StoneBase, uvGrass);
                 float4 c3 = SAMPLE_TEXTURE2D(_MossBase,  sampler_StoneBase, uvMoss);
+
+                c0.rgb = ApplyHSB(c0.rgb, _StoneHue, _StoneSaturation, _StoneBrightness);
+                c1.rgb = ApplyHSB(c1.rgb, _DirtHue,  _DirtSaturation,  _DirtBrightness);
+                c2.rgb = ApplyHSB(c2.rgb, _GrassHue, _GrassSaturation, _GrassBrightness);
+                c3.rgb = ApplyHSB(c3.rgb, _MossHue,  _MossSaturation,  _MossBrightness);
 
                 float3 albedo =
                     c0.rgb * weights.x +

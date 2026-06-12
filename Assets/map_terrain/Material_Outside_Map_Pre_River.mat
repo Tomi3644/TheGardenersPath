@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material_shader_terrain_test_moana 2
+  m_Name: Material_Outside_Map_Pre_River
   m_Shader: {fileID: 4800000, guid: e7cd99cb82436e44db09cd209be827c6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Control:
-        m_Texture: {fileID: 2800000, guid: d1dca50749e42b74a899cdd9d5c78bae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97c9c755c23fd6c4f8f2155cd2a91e5a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtAO:
@@ -145,21 +145,33 @@ Material:
     m_Floats:
     - _AOStrength: 1
     - _ColorMaskSoftness: 1
+    - _DirtBrightness: 1
+    - _DirtHue: 0
+    - _DirtSaturation: 1
     - _DirtSmoothness: 0.25
+    - _GrassBrightness: 1
+    - _GrassHue: 0
+    - _GrassSaturation: 1
     - _GrassSmoothness: 0.35
     - _HeightBlend: 0.5
     - _HeightStrength: 2
     - _LegacyColorMask: 1
     - _MetallicStrength: 1
+    - _MossBrightness: 1
+    - _MossHue: 0
+    - _MossSaturation: 1
     - _MossSmoothness: 0.45
     - _NormalScale: 2
-    - _RoughnessStrength: 1.566
+    - _RoughnessStrength: 1.888
+    - _StoneBrightness: 1
+    - _StoneHue: 0
+    - _StoneSaturation: 1
     - _StoneSmoothness: 0.4
     - _UseHeightBlend: 0
     - _UseNormals: 1
     m_Colors:
-    - _DirtTilingOffset: {r: 7, g: 7, b: 0, a: 0}
-    - _GrassTilingOffset: {r: 50, g: 50, b: 0, a: 0}
+    - _DirtTilingOffset: {r: 20, g: 20, b: 0, a: 0}
+    - _GrassTilingOffset: {r: 75, g: 75, b: 0, a: 0}
     - _MossTilingOffset: {r: 25, g: 25, b: 0, a: 0}
     - _StoneTilingOffset: {r: 8, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
