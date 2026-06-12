@@ -1,4 +1,4 @@
-Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB"
+Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB DBuffer Decals"
 {
     Properties
     {
@@ -89,9 +89,13 @@ Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB"
             #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile_fog
 
+            #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
+            #pragma multi_compile_fragment _ _DECAL_NORMAL_BLEND_LOW _DECAL_NORMAL_BLEND_MEDIUM _DECAL_NORMAL_BLEND_HIGH
+
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceData.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DBuffer.hlsl"
 
             struct Attributes
             {
@@ -357,6 +361,10 @@ Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB"
                 inputData.bakedGI = SAMPLE_GI(IN.lightmapUV, IN.vertexSH, normalWS);
                 inputData.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(IN.positionCS);
                 inputData.shadowMask = SAMPLE_SHADOWMASK(IN.lightmapUV);
+
+                #if defined(_DBUFFER)
+                    ApplyDecalToSurfaceData(IN.positionCS, surfaceData, inputData);
+                #endif
 
                 half4 color = UniversalFragmentPBR(inputData, surfaceData);
                 color.rgb = MixFog(color.rgb, IN.fogFactor);
