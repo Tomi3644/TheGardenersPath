@@ -574,7 +574,7 @@ MonoBehaviour:
     - name: flowers random
       settings:
         brushRadius: 0.92
-        brushSpacing: 0.09
+        brushSpacing: 1.25
         brushOverlapCheckMode: 0
         brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
@@ -702,25 +702,25 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
-      - gameObject: {fileID: 3558276463149590926, guid: 72b68ecbb3ccd2e4d909ea17aa592d28, type: 3}
+      - gameObject: {fileID: 0}
       - gameObject: {fileID: 919132149155446097, guid: 6190f9a8d89a39f4d98fc0769b527fd5, type: 3}
       - gameObject: {fileID: 4115165732812477072, guid: 6a260e70c2002af4ea0fe2be7b3f2156, type: 3}
-      - gameObject: {fileID: 1410983580460250341, guid: 395d2f5e6d08cbb41ad17cbc7aef0faf, type: 3}
-      selectedSlot: 6
+      - gameObject: {fileID: 0}
+      selectedSlot: 9
       selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: grass random
       settings:
         brushRadius: 0.88
-        brushSpacing: 0.24
+        brushSpacing: 0.65
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.09
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
           m_Bits: 0
-        surfaceOffset: 0
+        surfaceOffset: 1.5
         orientationTransformMode: 0
         orientationMode: 2
         alongBrushStroke: 1
