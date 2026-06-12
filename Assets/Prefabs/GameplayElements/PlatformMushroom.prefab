@@ -64,7 +64,8 @@ Transform:
   m_LocalPosition: {x: -0.017, y: -0.047, z: -0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2790102304974013657}
   m_Father: {fileID: 4373987751526790777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8690059414565344862
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
-  m_Material: {fileID: 2100000, guid: d067f75fe3ff9f34c94f2c88d29e1a9e, type: 2}
+  m_Material: {fileID: 2100000, guid: 2aa2c01b280c01941855439ef7ac1db5, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
   m_StartAngleFade: 180
@@ -91,7 +92,7 @@ MonoBehaviour:
     m_Bits: 1
   m_ScaleMode: 0
   m_Offset: {x: 0, y: -0.06, z: 1.1582191}
-  m_Size: {x: 1.93, y: 2.87, z: 1.78}
+  m_Size: {x: 2.87, y: 2.87, z: 1.78}
   m_FadeFactor: 1
   version: 1
   m_DecalLayerMask: 1
@@ -288,3 +289,65 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!1001 &7920855264359923989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1296323615362293208}
+    m_Modifications:
+    - target: {fileID: 5211684801828493751, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_Name
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.081
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+--- !u!4 &2790102304974013657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5428219254770845132, guid: 295484288b9a13f42a9eb28f4310b7c1, type: 3}
+  m_PrefabInstance: {fileID: 7920855264359923989}
+  m_PrefabAsset: {fileID: 0}
