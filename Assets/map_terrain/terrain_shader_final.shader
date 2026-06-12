@@ -1,4 +1,4 @@
-Shader "Custom/URP/Mesh Terrain 4 Layer"
+Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB"
 {
     Properties
     {
@@ -16,9 +16,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _StoneHeight("Stone Height", 2D) = "black" {}
         _StoneAO("Stone AO", 2D) = "white" {}
         _StoneTilingOffset("Stone Tiling Offset", Vector) = (8,8,0,0)
-        _StoneHue("Stone Hue", Range(-0.5,0.5)) = 0
-        _StoneSaturation("Stone Saturation", Range(0,2)) = 1
-        _StoneBrightness("Stone Brightness", Range(0,2)) = 1
+        _StoneHSB("Stone HSB", Vector) = (0,1,1,0)
 
         [Header(Dirt Yellow)]
         _DirtBase("Dirt Base Color", 2D) = "white" {}
@@ -27,9 +25,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _DirtHeight("Dirt Height", 2D) = "black" {}
         _DirtAO("Dirt AO", 2D) = "white" {}
         _DirtTilingOffset("Dirt Tiling Offset", Vector) = (8,8,0,0)
-        _DirtHue("Dirt Hue", Range(-0.5,0.5)) = 0
-        _DirtSaturation("Dirt Saturation", Range(0,2)) = 1
-        _DirtBrightness("Dirt Brightness", Range(0,2)) = 1
+        _DirtHSB("Dirt HSB", Vector) = (0,1,1,0)
 
         [Header(Grass Green)]
         _GrassBase("Grass Base Color", 2D) = "white" {}
@@ -38,9 +34,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _GrassHeight("Grass Height", 2D) = "black" {}
         _GrassAO("Grass AO", 2D) = "white" {}
         _GrassTilingOffset("Grass Tiling Offset", Vector) = (8,8,0,0)
-        _GrassHue("Grass Hue", Range(-0.5,0.5)) = 0
-        _GrassSaturation("Grass Saturation", Range(0,2)) = 1
-        _GrassBrightness("Grass Brightness", Range(0,2)) = 1
+        _GrassHSB("Grass HSB", Vector) = (0,1,1,0)
 
         [Header(Moss Blue)]
         _MossBase("Moss Base Color", 2D) = "white" {}
@@ -49,9 +43,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
         _MossHeight("Moss Height", 2D) = "black" {}
         _MossAO("Moss AO", 2D) = "white" {}
         _MossTilingOffset("Moss Tiling Offset", Vector) = (8,8,0,0)
-        _MossHue("Moss Hue", Range(-0.5,0.5)) = 0
-        _MossSaturation("Moss Saturation", Range(0,2)) = 1
-        _MossBrightness("Moss Brightness", Range(0,2)) = 1
+        _MossHSB("Moss HSB", Vector) = (0,1,1,0)
 
         [Header(Global)]
         _NormalScale("Normal Scale", Range(0,2)) = 1
@@ -66,6 +58,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
             "RenderPipeline"="UniversalPipeline"
             "RenderType"="Opaque"
             "Queue"="Geometry"
+            "UniversalMaterialType"="Lit"
         }
 
         Pass
@@ -83,9 +76,17 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
 
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_SCREEN
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
-            #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
-            #pragma multi_compile _ _SHADOWS_SOFT
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile_fragment _ _SHADOWS_SOFT
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
+            #pragma multi_compile_fragment _ _LIGHT_COOKIES
+            #pragma multi_compile _ _FORWARD_PLUS
+            #pragma multi_compile _ LIGHTMAP_ON
+            #pragma multi_compile _ DIRLIGHTMAP_COMBINED
+            #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
+            #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile_fog
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
@@ -98,16 +99,21 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 float3 normalOS   : NORMAL;
                 float4 tangentOS  : TANGENT;
                 float2 uv         : TEXCOORD0;
+                float2 lightmapUV : TEXCOORD1;
             };
 
             struct Varyings
             {
-                float4 positionCS : SV_POSITION;
-                float3 positionWS : TEXCOORD0;
-                float3 normalWS   : TEXCOORD1;
-                float4 tangentWS  : TEXCOORD2;
-                float2 uv         : TEXCOORD3;
-                float fogFactor   : TEXCOORD4;
+                float4 positionCS  : SV_POSITION;
+                float3 positionWS  : TEXCOORD0;
+                float3 normalWS    : TEXCOORD1;
+                float4 tangentWS   : TEXCOORD2;
+                float2 uv          : TEXCOORD3;
+                float fogFactor    : TEXCOORD4;
+                float2 lightmapUV  : TEXCOORD5;
+                half3 vertexSH     : TEXCOORD6;
+                float4 shadowCoord : TEXCOORD7;
+                half3 vertexLight  : TEXCOORD8;
             };
 
             TEXTURE2D(_Control);
@@ -149,21 +155,10 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 float4 _GrassTilingOffset;
                 float4 _MossTilingOffset;
 
-                float _StoneHue;
-                float _StoneSaturation;
-                float _StoneBrightness;
-
-                float _DirtHue;
-                float _DirtSaturation;
-                float _DirtBrightness;
-
-                float _GrassHue;
-                float _GrassSaturation;
-                float _GrassBrightness;
-
-                float _MossHue;
-                float _MossSaturation;
-                float _MossBrightness;
+                float4 _StoneHSB;
+                float4 _DirtHSB;
+                float4 _GrassHSB;
+                float4 _MossHSB;
 
                 float _NormalScale;
                 float _RoughnessStrength;
@@ -190,7 +185,6 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
             float4 GetLayerWeights(float4 mask)
             {
                 #if defined(_LEGACY_COLOR_MASK)
-
                     float3 c = mask.rgb;
 
                     float stone = ColorMaskWeight(c, float3(1,0,0));
@@ -199,11 +193,8 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                     float moss  = ColorMaskWeight(c, float3(0,0,1));
 
                     return NormalizeWeights(float4(stone, dirt, grass, moss));
-
                 #else
-
                     return NormalizeWeights(float4(mask.r, mask.a, mask.g, mask.b));
-
                 #endif
             }
 
@@ -222,30 +213,30 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
 
             float3 RGBToHSV(float3 c)
             {
-                float4 K = float4(0.0, -0.3333333, 0.6666667, -1.0);
+                float4 K = float4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
                 float4 p = lerp(float4(c.bg, K.wz), float4(c.gb, K.xy), step(c.b, c.g));
                 float4 q = lerp(float4(p.xyw, c.r), float4(c.r, p.yzx), step(p.x, c.r));
 
                 float d = q.x - min(q.w, q.y);
-                float e = 0.0000001;
+                float e = 1e-10;
 
                 return float3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
             }
 
             float3 HSVToRGB(float3 c)
             {
-                float4 K = float4(1.0, 0.6666667, 0.3333333, 3.0);
+                float4 K = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
                 float3 p = abs(frac(c.xxx + K.xyz) * 6.0 - K.www);
                 return c.z * lerp(K.xxx, saturate(p - K.xxx), c.y);
             }
 
-            float3 ApplyHSB(float3 color, float hue, float saturation, float brightness)
+            float3 ApplyHSB(float3 color, float4 hsb)
             {
                 float3 hsv = RGBToHSV(saturate(color));
 
-                hsv.x = frac(hsv.x + hue);
-                hsv.y = saturate(hsv.y * saturation);
-                hsv.z = saturate(hsv.z * brightness);
+                hsv.x = frac(hsv.x + hsb.x);
+                hsv.y = saturate(hsv.y * hsb.y);
+                hsv.z = max(0.0, hsv.z * hsb.z);
 
                 return HSVToRGB(hsv);
             }
@@ -269,10 +260,15 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
 
                 OUT.positionCS = pos.positionCS;
                 OUT.positionWS = pos.positionWS;
-                OUT.normalWS = nor.normalWS;
-                OUT.tangentWS = float4(nor.tangentWS, IN.tangentOS.w * GetOddNegativeScale());
+                OUT.normalWS = NormalizeNormalPerVertex(nor.normalWS);
+                OUT.tangentWS = float4(NormalizeNormalPerVertex(nor.tangentWS), IN.tangentOS.w * GetOddNegativeScale());
                 OUT.uv = TRANSFORM_TEX(IN.uv, _Control);
                 OUT.fogFactor = ComputeFogFactor(pos.positionCS.z);
+                OUT.shadowCoord = GetShadowCoord(pos);
+                OUT.vertexLight = VertexLighting(pos.positionWS, OUT.normalWS);
+
+                OUTPUT_LIGHTMAP_UV(IN.lightmapUV, unity_LightmapST, OUT.lightmapUV);
+                OUTPUT_SH(OUT.normalWS, OUT.vertexSH);
 
                 return OUT;
             }
@@ -294,21 +290,21 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
 
                 weights = ApplyHeightBlend(weights, float4(h0, h1, h2, h3));
 
-                float4 c0 = SAMPLE_TEXTURE2D(_StoneBase, sampler_StoneBase, uvStone);
-                float4 c1 = SAMPLE_TEXTURE2D(_DirtBase,  sampler_StoneBase, uvDirt);
-                float4 c2 = SAMPLE_TEXTURE2D(_GrassBase, sampler_StoneBase, uvGrass);
-                float4 c3 = SAMPLE_TEXTURE2D(_MossBase,  sampler_StoneBase, uvMoss);
+                float3 c0 = SAMPLE_TEXTURE2D(_StoneBase, sampler_StoneBase, uvStone).rgb;
+                float3 c1 = SAMPLE_TEXTURE2D(_DirtBase,  sampler_StoneBase, uvDirt).rgb;
+                float3 c2 = SAMPLE_TEXTURE2D(_GrassBase, sampler_StoneBase, uvGrass).rgb;
+                float3 c3 = SAMPLE_TEXTURE2D(_MossBase,  sampler_StoneBase, uvMoss).rgb;
 
-                c0.rgb = ApplyHSB(c0.rgb, _StoneHue, _StoneSaturation, _StoneBrightness);
-                c1.rgb = ApplyHSB(c1.rgb, _DirtHue,  _DirtSaturation,  _DirtBrightness);
-                c2.rgb = ApplyHSB(c2.rgb, _GrassHue, _GrassSaturation, _GrassBrightness);
-                c3.rgb = ApplyHSB(c3.rgb, _MossHue,  _MossSaturation,  _MossBrightness);
+                c0 = ApplyHSB(c0, _StoneHSB);
+                c1 = ApplyHSB(c1, _DirtHSB);
+                c2 = ApplyHSB(c2, _GrassHSB);
+                c3 = ApplyHSB(c3, _MossHSB);
 
-                float3 albedo =
-                    c0.rgb * weights.x +
-                    c1.rgb * weights.y +
-                    c2.rgb * weights.z +
-                    c3.rgb * weights.w;
+                half3 albedo =
+                    c0 * weights.x +
+                    c1 * weights.y +
+                    c2 * weights.z +
+                    c3 * weights.w;
 
                 float roughness =
                     SAMPLE_TEXTURE2D(_StoneRoughness, sampler_StoneBase, uvStone).r * weights.x +
@@ -317,7 +313,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                     SAMPLE_TEXTURE2D(_MossRoughness,  sampler_StoneBase, uvMoss).r  * weights.w;
 
                 roughness = saturate(roughness * _RoughnessStrength);
-                float smoothness = saturate(1.0 - roughness);
+                half smoothness = saturate(1.0 - roughness);
 
                 float ao =
                     SAMPLE_TEXTURE2D(_StoneAO, sampler_StoneBase, uvStone).r * weights.x +
@@ -344,10 +340,10 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 surfaceData.metallic = 0;
                 surfaceData.specular = half3(0,0,0);
                 surfaceData.smoothness = smoothness;
-                surfaceData.occlusion = ao;
-                surfaceData.emission = half3(0,0,0);
-                surfaceData.alpha = 1;
                 surfaceData.normalTS = normalTS;
+                surfaceData.emission = half3(0,0,0);
+                surfaceData.occlusion = ao;
+                surfaceData.alpha = 1;
                 surfaceData.clearCoatMask = 0;
                 surfaceData.clearCoatSmoothness = 0;
 
@@ -355,12 +351,12 @@ Shader "Custom/URP/Mesh Terrain 4 Layer"
                 inputData.positionWS = IN.positionWS;
                 inputData.normalWS = normalWS;
                 inputData.viewDirectionWS = SafeNormalize(GetCameraPositionWS() - IN.positionWS);
-                inputData.shadowCoord = TransformWorldToShadowCoord(IN.positionWS);
+                inputData.shadowCoord = IN.shadowCoord;
                 inputData.fogCoord = IN.fogFactor;
-                inputData.vertexLighting = half3(0,0,0);
-                inputData.bakedGI = SampleSH(normalWS);
+                inputData.vertexLighting = IN.vertexLight;
+                inputData.bakedGI = SAMPLE_GI(IN.lightmapUV, IN.vertexSH, normalWS);
                 inputData.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(IN.positionCS);
-                inputData.shadowMask = half4(1,1,1,1);
+                inputData.shadowMask = SAMPLE_SHADOWMASK(IN.lightmapUV);
 
                 half4 color = UniversalFragmentPBR(inputData, surfaceData);
                 color.rgb = MixFog(color.rgb, IN.fogFactor);
