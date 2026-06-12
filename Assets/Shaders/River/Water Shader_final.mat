@@ -70,7 +70,7 @@ Material:
     - _Normal_Strenght: 1.38
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Shallow_Alpha: 0.957
+    - _Shallow_Alpha: 0.846
     - _Smoothness: 1
     - _Strength: 9.83
     - _WaterColor_Tiling: 15
