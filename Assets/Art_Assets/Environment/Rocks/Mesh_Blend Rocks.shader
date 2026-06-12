@@ -1,4 +1,4 @@
-Shader "Custom/URP/MeshBlend_RockToRock_UEStyle_FIXED"
+Shader "Custom/URP/MeshBlend_RockToRock_Lit_DBufferDecals"
 {
     Properties
     {
@@ -30,45 +30,61 @@ Shader "Custom/URP/MeshBlend_RockToRock_UEStyle_FIXED"
             "RenderPipeline"="UniversalPipeline"
             "RenderType"="Opaque"
             "Queue"="Geometry"
+            "UniversalMaterialType"="Lit"
         }
 
         Pass
         {
             Name "ForwardLit"
-
-            Tags
-            {
-                "LightMode"="UniversalForward"
-            }
+            Tags { "LightMode"="UniversalForward" }
 
             HLSLPROGRAM
 
             #pragma vertex vert
             #pragma fragment frag
+            #pragma target 4.5
 
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
-            #pragma multi_compile _ _SHADOWS_SOFT
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_SCREEN
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile_fragment _ _SHADOWS_SOFT
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
+            #pragma multi_compile_fragment _ _LIGHT_COOKIES
+            #pragma multi_compile _ _FORWARD_PLUS
+            #pragma multi_compile _ LIGHTMAP_ON
+            #pragma multi_compile _ DIRLIGHTMAP_COMBINED
+            #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
+            #pragma multi_compile _ SHADOWS_SHADOWMASK
+            #pragma multi_compile_fog
+
+            #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
+            #pragma multi_compile_fragment _ _DECAL_NORMAL_BLEND_LOW _DECAL_NORMAL_BLEND_MEDIUM _DECAL_NORMAL_BLEND_HIGH
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceData.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DBuffer.hlsl"
 
             struct Attributes
             {
                 float4 positionOS : POSITION;
-                float3 normalOS : NORMAL;
+                float3 normalOS   : NORMAL;
+                float2 uv         : TEXCOORD0;
+                float2 lightmapUV : TEXCOORD1;
             };
 
             struct Varyings
             {
-                float4 positionHCS : SV_POSITION;
-
-                float3 worldPos : TEXCOORD0;
-                float3 worldNormal : TEXCOORD1;
-
-                float4 shadowCoord : TEXCOORD2;
-
-                float4 screenPos : TEXCOORD3;
+                float4 positionCS  : SV_POSITION;
+                float3 positionWS  : TEXCOORD0;
+                float3 normalWS    : TEXCOORD1;
+                float fogFactor    : TEXCOORD2;
+                float2 lightmapUV  : TEXCOORD3;
+                half3 vertexSH     : TEXCOORD4;
+                float4 shadowCoord : TEXCOORD5;
+                half3 vertexLight  : TEXCOORD6;
             };
 
             TEXTURE2D(_BaseColor);
@@ -86,317 +102,192 @@ Shader "Custom/URP/MeshBlend_RockToRock_UEStyle_FIXED"
             TEXTURE2D(_AOMap);
             SAMPLER(sampler_AOMap);
 
-            float _TextureTiling;
+            CBUFFER_START(UnityPerMaterial)
+                float _TextureTiling;
 
-            float _HeightStrength;
-            float _AOStrength;
-            float _RoughnessStrength;
+                float _HeightStrength;
+                float _AOStrength;
+                float _RoughnessStrength;
 
-            float _NormalStrength;
+                float _NormalStrength;
 
-            float _Saturation;
-            float _Contrast;
-            float _Brightness;
+                float _Saturation;
+                float _Contrast;
+                float _Brightness;
 
-            float _DitherStrength;
-
-            // =====================================
-            // TRIPLANAR
-            // =====================================
+                float _DitherStrength;
+            CBUFFER_END
 
             float3 GetTriWeights(float3 n)
             {
                 float3 w = abs(n);
-
-                w = pow(w, 4);
-
+                w = pow(w, 4.0);
                 return w / max(w.x + w.y + w.z, 0.0001);
             }
 
             half4 SampleTri(TEXTURE2D_PARAM(tex, samp), float3 p, float3 w)
             {
-                float2 x = p.zy * _TextureTiling;
-                float2 y = p.xz * _TextureTiling;
-                float2 z = p.xy * _TextureTiling;
+                float2 uvX = p.zy * _TextureTiling;
+                float2 uvY = p.xz * _TextureTiling;
+                float2 uvZ = p.xy * _TextureTiling;
 
-                half4 cx = SAMPLE_TEXTURE2D(tex, samp, x);
-                half4 cy = SAMPLE_TEXTURE2D(tex, samp, y);
-                half4 cz = SAMPLE_TEXTURE2D(tex, samp, z);
+                half4 x = SAMPLE_TEXTURE2D(tex, samp, uvX);
+                half4 y = SAMPLE_TEXTURE2D(tex, samp, uvY);
+                half4 z = SAMPLE_TEXTURE2D(tex, samp, uvZ);
 
-                return
-                    cx * w.x +
-                    cy * w.y +
-                    cz * w.z;
+                return x * w.x + y * w.y + z * w.z;
             }
 
-            float3 SampleTriNormal(TEXTURE2D_PARAM(tex, samp), float3 p, float3 w)
+            float3 SampleTriNormalWS(TEXTURE2D_PARAM(tex, samp), float3 p, float3 normalWS, float3 w)
             {
-                float2 x = p.zy * _TextureTiling;
-                float2 y = p.xz * _TextureTiling;
-                float2 z = p.xy * _TextureTiling;
+                float2 uvX = p.zy * _TextureTiling;
+                float2 uvY = p.xz * _TextureTiling;
+                float2 uvZ = p.xy * _TextureTiling;
 
-                float3 nx = UnpackNormal(
-                    SAMPLE_TEXTURE2D(tex, samp, x)
-                );
+                float3 nX = UnpackNormalScale(SAMPLE_TEXTURE2D(tex, samp, uvX), _NormalStrength);
+                float3 nY = UnpackNormalScale(SAMPLE_TEXTURE2D(tex, samp, uvY), _NormalStrength);
+                float3 nZ = UnpackNormalScale(SAMPLE_TEXTURE2D(tex, samp, uvZ), _NormalStrength);
 
-                float3 ny = UnpackNormal(
-                    SAMPLE_TEXTURE2D(tex, samp, y)
-                );
+                float3 worldX = normalize(float3(nX.z, nX.y, nX.x));
+                float3 worldY = normalize(float3(nY.x, nY.z, nY.y));
+                float3 worldZ = normalize(float3(nZ.x, nZ.y, nZ.z));
 
-                float3 nz = UnpackNormal(
-                    SAMPLE_TEXTURE2D(tex, samp, z)
-                );
+                worldX.x *= sign(normalWS.x);
+                worldY.y *= sign(normalWS.y);
+                worldZ.z *= sign(normalWS.z);
 
-                return normalize(
-                    nx * w.x +
-                    ny * w.y +
-                    nz * w.z
-                );
+                return normalize(worldX * w.x + worldY * w.y + worldZ * w.z);
             }
 
-            // =====================================
-            // RNM NORMAL BLENDING
-            // =====================================
-
-            float3 BlendRNM(float3 n1, float3 n2)
+            float Dither(float2 screenUV)
             {
-                n1 += float3(0,0,1);
-                n2 *= float3(-1,-1,1);
-
-                return normalize(n1 * dot(n1, n2) / n1.z - n2);
+                return frac(sin(dot(screenUV, float2(12.9898, 78.233))) * 43758.5453);
             }
-
-            // =====================================
-            // DITHER
-            // =====================================
-
-            float Dither(float2 screenPos)
-            {
-                return frac(
-                    sin(dot(screenPos, float2(12.9898,78.233)))
-                    * 43758.5453
-                );
-            }
-
-            // =====================================
-            // COLOR GRADE
-            // =====================================
 
             float3 ApplyColorGrade(float3 col)
             {
                 col += _Brightness;
-
                 col = (col - 0.5) * _Contrast + 0.5;
 
-                float l = dot(col, float3(0.299,0.587,0.114));
+                float luma = dot(col, float3(0.299, 0.587, 0.114));
+                col = lerp(float3(luma, luma, luma), col, _Saturation);
 
-                col = lerp(float3(l,l,l), col, _Saturation);
-
-                return col;
+                return saturate(col);
             }
 
-            // =====================================
-            // VERTEX
-            // =====================================
-
-            Varyings vert(Attributes v)
+            Varyings vert(Attributes IN)
             {
-                Varyings o;
+                Varyings OUT;
 
-                float3 worldPos =
-                    TransformObjectToWorld(v.positionOS.xyz);
+                VertexPositionInputs pos = GetVertexPositionInputs(IN.positionOS.xyz);
+                VertexNormalInputs nor = GetVertexNormalInputs(IN.normalOS);
 
-                o.worldPos = worldPos;
+                OUT.positionCS = pos.positionCS;
+                OUT.positionWS = pos.positionWS;
+                OUT.normalWS = NormalizeNormalPerVertex(nor.normalWS);
+                OUT.fogFactor = ComputeFogFactor(pos.positionCS.z);
+                OUT.shadowCoord = GetShadowCoord(pos);
+                OUT.vertexLight = VertexLighting(pos.positionWS, OUT.normalWS);
 
-                o.worldNormal =
-                    normalize(
-                        TransformObjectToWorldNormal(v.normalOS)
-                    );
+                OUTPUT_LIGHTMAP_UV(IN.lightmapUV, unity_LightmapST, OUT.lightmapUV);
+                OUTPUT_SH(OUT.normalWS, OUT.vertexSH);
 
-                o.positionHCS =
-                    TransformWorldToHClip(worldPos);
-
-                o.shadowCoord =
-                    TransformWorldToShadowCoord(worldPos);
-
-                o.screenPos =
-                    o.positionHCS;
-
-                return o;
+                return OUT;
             }
 
-            // =====================================
-            // FRAGMENT
-            // =====================================
-
-            half4 frag(Varyings i) : SV_Target
+            half4 frag(Varyings IN) : SV_Target
             {
-                float3 normalWS =
-                    normalize(i.worldNormal);
+                float3 baseNormalWS = normalize(IN.normalWS);
+                float3 weights = GetTriWeights(baseNormalWS);
 
-                float3 w =
-                    GetTriWeights(normalWS);
+                half4 baseSample = SampleTri(
+                    TEXTURE2D_ARGS(_BaseColor, sampler_BaseColor),
+                    IN.positionWS,
+                    weights
+                );
 
-                // =========================
-                // ALBEDO
-                // =========================
+                float height = SampleTri(
+                    TEXTURE2D_ARGS(_HeightMap, sampler_HeightMap),
+                    IN.positionWS,
+                    weights
+                ).r;
 
-                half4 albedo =
-                    SampleTri(
-                        TEXTURE2D_ARGS(_BaseColor, sampler_BaseColor),
-                        i.worldPos,
-                        w
-                    );
+                float ao = SampleTri(
+                    TEXTURE2D_ARGS(_AOMap, sampler_AOMap),
+                    IN.positionWS,
+                    weights
+                ).r;
 
-                // =========================
-                // NORMAL
-                // =========================
+                float roughness = SampleTri(
+                    TEXTURE2D_ARGS(_RoughnessMap, sampler_RoughnessMap),
+                    IN.positionWS,
+                    weights
+                ).r;
 
-                float3 triNormal =
-                    SampleTriNormal(
-                        TEXTURE2D_ARGS(_NormalMap, sampler_NormalMap),
-                        i.worldPos,
-                        w
-                    );
+                float3 normalWS = SampleTriNormalWS(
+                    TEXTURE2D_ARGS(_NormalMap, sampler_NormalMap),
+                    IN.positionWS,
+                    baseNormalWS,
+                    weights
+                );
 
-                triNormal =
-                    normalize(
-                        lerp(
-                            float3(0,0,1),
-                            triNormal,
-                            _NormalStrength
-                        )
-                    );
+                float3 albedo = baseSample.rgb;
 
-                float3 finalNormal =
-                    BlendRNM(normalWS, triNormal);
+                albedo *= 1.0 + (height - 0.5) * _HeightStrength;
 
-                // =========================
-                // HEIGHT
-                // =========================
+                ao = lerp(1.0, ao, _AOStrength);
 
-                float height =
-                    SampleTri(
-                        TEXTURE2D_ARGS(_HeightMap, sampler_HeightMap),
-                        i.worldPos,
-                        w
-                    ).r;
+                roughness = lerp(1.0, roughness, _RoughnessStrength);
+                roughness = saturate(roughness);
 
-                albedo.rgb *=
-                    (1 + (height - 0.5) * _HeightStrength);
+                float smoothness = saturate(1.0 - roughness);
 
-                // =========================
-                // AO
-                // =========================
+                float2 screenUV = GetNormalizedScreenSpaceUV(IN.positionCS);
+                float noise = Dither(screenUV * 400.0);
 
-                float ao =
-                    SampleTri(
-                        TEXTURE2D_ARGS(_AOMap, sampler_AOMap),
-                        i.worldPos,
-                        w
-                    ).r;
+                albedo += (noise - 0.5) * _DitherStrength;
+                albedo = ApplyColorGrade(albedo);
 
-                ao = lerp(1, ao, _AOStrength);
+                SurfaceData surfaceData = (SurfaceData)0;
+                surfaceData.albedo = albedo;
+                surfaceData.metallic = 0;
+                surfaceData.specular = half3(0, 0, 0);
+                surfaceData.smoothness = smoothness;
+                surfaceData.normalTS = half3(0, 0, 1);
+                surfaceData.emission = half3(0, 0, 0);
+                surfaceData.occlusion = ao;
+                surfaceData.alpha = 1;
+                surfaceData.clearCoatMask = 0;
+                surfaceData.clearCoatSmoothness = 0;
 
-                albedo.rgb *= ao;
+                InputData inputData = (InputData)0;
+                inputData.positionWS = IN.positionWS;
+                inputData.normalWS = normalWS;
+                inputData.viewDirectionWS = SafeNormalize(GetCameraPositionWS() - IN.positionWS);
+                inputData.shadowCoord = IN.shadowCoord;
+                inputData.fogCoord = IN.fogFactor;
+                inputData.vertexLighting = IN.vertexLight;
+                inputData.bakedGI = SAMPLE_GI(IN.lightmapUV, IN.vertexSH, normalWS);
+                inputData.normalizedScreenSpaceUV = screenUV;
+                inputData.shadowMask = SAMPLE_SHADOWMASK(IN.lightmapUV);
 
-                // =========================
-                // LIGHT
-                // =========================
+                #if defined(_DBUFFER)
+                    ApplyDecalToSurfaceData(IN.positionCS, surfaceData, inputData);
+                #endif
 
-                Light mainLight =
-                    GetMainLight(i.shadowCoord);
+                half4 color = UniversalFragmentPBR(inputData, surfaceData);
+                color.rgb = MixFog(color.rgb, IN.fogFactor);
 
-                float NdotL =
-                    saturate(dot(finalNormal, mainLight.direction));
-
-                float shadow =
-                    mainLight.shadowAttenuation;
-
-                // shadow stabilization
-                shadow = lerp(0.15, shadow, 0.85);
-
-                float diffuse =
-                    NdotL * shadow;
-
-                // =========================
-                // ROUGHNESS
-                // =========================
-
-                float roughness =
-                    SampleTri(
-                        TEXTURE2D_ARGS(_RoughnessMap, sampler_RoughnessMap),
-                        i.worldPos,
-                        w
-                    ).r;
-
-                float rough =
-                    lerp(1, roughness, _RoughnessStrength);
-
-                diffuse *= lerp(1.15, 0.85, rough);
-
-                // =========================
-                // APPLY LIGHT
-                // =========================
-
-                float3 lighting =
-                    mainLight.color * diffuse;
-
-                lighting += 0.2;
-
-                albedo.rgb *= lighting;
-
-                // =========================
-                // DITHER
-                // =========================
-
-                float2 screenUV =
-                    i.screenPos.xy / i.screenPos.w;
-
-                float noise =
-                    Dither(screenUV * 400);
-
-                albedo.rgb +=
-                    (noise - 0.5) * _DitherStrength;
-
-                // =========================
-                // COLOR GRADE
-                // =========================
-
-                albedo.rgb =
-                    ApplyColorGrade(albedo.rgb);
-
-                return albedo;
+                return color;
             }
 
             ENDHLSL
         }
 
-        // =====================================
-        // SHADOW CASTER
-        // =====================================
-
-        Pass
-        {
-            Name "ShadowCaster"
-
-            Tags
-            {
-                "LightMode"="ShadowCaster"
-            }
-
-            ZWrite On
-            ZTest LEqual
-            ColorMask 0
-
-            HLSLPROGRAM
-
-            #pragma vertex ShadowPassVertex
-            #pragma fragment ShadowPassFragment
-
-            #include "Packages/com.unity.render-pipelines.universal/Shaders/ShadowCasterPass.hlsl"
-
-            ENDHLSL
-        }
+        UsePass "Universal Render Pipeline/Lit/ShadowCaster"
+        UsePass "Universal Render Pipeline/Lit/DepthOnly"
+        UsePass "Universal Render Pipeline/Lit/DepthNormals"
     }
+
+    FallBack "Hidden/Universal Render Pipeline/FallbackError"
 }
