@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6959340763110739576}
+  - component: {fileID: 2270190026962426003}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -57,13 +58,26 @@ Transform:
   m_GameObject: {fileID: 9123873377031407643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -37.01, y: -38.37, z: -28.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3128151761551103647}
   m_Father: {fileID: 2429556662372849998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2270190026962426003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123873377031407643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652eec3398dc6a24cbeeb5360cd75bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrambleDeath
+  duration: 1
 --- !u!1001 &36134194361249485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,15 +104,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.4
+      value: 0.6099968
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.55
+      value: 2.8199997
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.862051
+      value: -0.19205093
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -106,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalRotation.y
@@ -114,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3164115943322400850, guid: 05beb54922b3b0a498a6218b217c18f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -186,10 +200,10 @@ MonoBehaviour:
   seedReaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599561670664612327}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2270190026962426003}
+        m_TargetAssemblyTypeName: BrambleDeath, Assembly-CSharp
+        m_MethodName: Flatten
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
