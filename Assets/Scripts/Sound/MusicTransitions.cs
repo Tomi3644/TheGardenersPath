@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class MusicTransitions : MonoBehaviour
 {
     [SerializeField] private MusicManager musicManager;
     [SerializeField] Transitions transition;
+    [SerializeField] private GameObject backtrackWall;
 
     void OnTriggerEnter(Collider other)
     {
@@ -62,6 +64,7 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -70));
 
                 SFXManager.instance.SwitchFootsteps();
+                backtrackWall.SetActive(true);
 
                 break;
             case Transitions.CaveExit:
@@ -72,6 +75,7 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
 
                 SFXManager.instance.SwitchFootsteps();
+                backtrackWall.SetActive(true);
 
                 break;
             case Transitions.GameEnd:

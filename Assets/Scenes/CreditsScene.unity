@@ -570,22 +570,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsManager
   displayElements:
-  - Thanks for playing
-  - Blablabla
-  - C'est un test
-  - "On verra ce qu'on met apr\xE8s"
-  - La musique est cool, hein ?
-  - "Ouais c'est peut-\xEAtre un peu long..."
-  - ...
-  - ......
-  - Pas grave je zouke
-  - OUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-  - C'est trop bien
-  - "Le jeu va \xEAtre cool"
-  - "En tout cas la musique r\xE9gale"
-  - WHAAAAAT c'est la fin ????
-  - "Bon allez retour au menu l\xE0"
-  transitionTime: 5.42
+  - "Merci beaucoup d'avoir essay\xE9 notre jeu !"
+  - "Merci beaucoup d'avoir essay\xE9 notre jeu !"
+  - "On esp\xE8re qu'il vous a plu !"
+  - "On esp\xE8re qu'il vous a plu !"
+  - N'oubliez-pas de remplir le formulaire !
+  - N'oubliez-pas de remplir le formulaire !
+  - "Ah oui il faut dire qui a boss\xE9 sur le projet quand m\xEAme"
+  - "Ah oui il faut dire qui a boss\xE9 sur le projet quand m\xEAme"
+  - Thomas BARLIER
+  - Alexandre DUSSAUT
+  - Moana HOUY
+  - Thomas OLIVON
+  - Hugo SPAETH
+  - Et c'est tout !
+  - "Oui on est tr\xE8s forts, et on le sait !!!"
+  - "Oui on est tr\xE8s forts, et on le sait !!!"
+  - "L\xE0 si c'est pas assez clair, on essaye de meubler comme on peut"
+  - "L\xE0 si c'est pas assez clair, on essaye de meubler comme on peut"
+  - "Vu qu'\xE9videmment un jeu de cette envergure n'a pas besoin d'un g\xE9n\xE9rique
+    de 1:30"
+  - "Vu qu'\xE9videmment un jeu de cette envergure n'a pas besoin d'un g\xE9n\xE9rique
+    de 1:30"
+  - "Mais il s'av\xE8re que le fou qui a fait les musiques du jeu a d\xE9cid\xE9
+    que vous alliez zouker"
+  - "Mais il s'av\xE8re que le fou qui a fait les musiques du jeu a d\xE9cid\xE9
+    que vous alliez zouker"
+  - Alors profitez-en !!!
+  - Alors profitez-en !!!
+  - "On \xE9coutera vos retours pour am\xE9liorer les derniers d\xE9tails"
+  - "On \xE9coutera vos retours pour am\xE9liorer les derniers d\xE9tails"
+  - Merci
+  - Merci
+  - The Gardener's Path
+  - The Gardener's Path
+  transitionTime: 2.71
   creditsText: {fileID: 1951371590}
 --- !u!114 &1659920830
 MonoBehaviour:

@@ -106,10 +106,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(JumpWait());
         }
 
-        if (isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = -0.1f;
-        }
+        // if (isGrounded && playerVelocity.y < 0)
+        // {
+        //     playerVelocity.y = -0.1f;
+        // }
 
         // Gravity application on player (different if on ladder)
         if (!isOnLadder && !bouncedThisFrame) playerVelocity.y += gravityValue * Time.deltaTime;
