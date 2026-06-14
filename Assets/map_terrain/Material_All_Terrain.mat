@@ -162,7 +162,7 @@ Material:
     - _MossSaturation: 1
     - _MossSmoothness: 0.45
     - _NormalScale: 2
-    - _RoughnessStrength: 1.908
+    - _RoughnessStrength: 2
     - _StoneBrightness: 1
     - _StoneHue: 0
     - _StoneSaturation: 1
@@ -170,9 +170,13 @@ Material:
     - _UseHeightBlend: 0
     - _UseNormals: 1
     m_Colors:
+    - _DirtHSB: {r: 0, g: 1, b: 1, a: 0}
     - _DirtTilingOffset: {r: 7, g: 7, b: 0, a: 0}
+    - _GrassHSB: {r: 0, g: 1, b: 1, a: 0}
     - _GrassTilingOffset: {r: 25, g: 25, b: 0, a: 0}
+    - _MossHSB: {r: 0, g: 1, b: 1, a: 0}
     - _MossTilingOffset: {r: 25, g: 25, b: 0, a: 0}
+    - _StoneHSB: {r: 0, g: 1, b: 1, a: 0}
     - _StoneTilingOffset: {r: 8, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
