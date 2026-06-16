@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private float gravityValue;
     private float previousHeight;
+    private float? lastGroundedTime;
+    private float? jumpButtonPressedTime;
 
     [SerializeField]
     private float playerSpeed;
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private float bounceHeight;
     [SerializeField]
     private float groundSphereSize;
+    [SerializeField]
+    private float coyoteTime = 0.2f;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip mushroomBounceSFX;
@@ -98,9 +102,11 @@ public class PlayerController : MonoBehaviour
         // Player jump on input if on layer Ground
         isJumping = inputManager.PlayerJumpedThisFrame();
 
-        if (isJumping && isGrounded && canJump && !isOnLadder)
-        {
+        if (isJumping) jumpButtonPressedTime = Time.time;
+        if (isGrounded) lastGroundedTime = Time.time;
 
+        if (Time.time - lastGroundedTime <= coyoteTime && Time.time - jumpButtonPressedTime <= coyoteTime && canJump && !isOnLadder)
+        {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             canJump = false;
             StartCoroutine(JumpWait());
