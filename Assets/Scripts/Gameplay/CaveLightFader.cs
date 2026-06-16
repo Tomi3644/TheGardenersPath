@@ -9,14 +9,14 @@ public class CaveLightFader : MonoBehaviour
     {
         if (other.tag == "Cave" && deathManager.hasRespawnedThisFrame == false)
         {
-            StartCoroutine(FadeIntensity(.5f, 0f, fadeTime));
+            StartCoroutine(FadeIntensity(.8f, 0f, fadeTime));
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Cave")
         {
-            StartCoroutine(FadeIntensity(0f, .5f, fadeTime));
+            StartCoroutine(FadeIntensity(0f, .8f, fadeTime));
         }
     }
 
