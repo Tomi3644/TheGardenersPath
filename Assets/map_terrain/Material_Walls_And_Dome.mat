@@ -175,7 +175,7 @@ Material:
     - _GrassHSB: {r: 0, g: 1, b: 1, a: 0}
     - _GrassTilingOffset: {r: 25, g: 25, b: 0, a: 0}
     - _MossHSB: {r: 0, g: 1, b: 1, a: 0}
-    - _MossTilingOffset: {r: 25, g: 25, b: 0, a: 0}
+    - _MossTilingOffset: {r: 25, g: 11.8, b: 0, a: 0}
     - _StoneHSB: {r: 0, g: 1, b: 1, a: 0}
     - _StoneTilingOffset: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
