@@ -30,15 +30,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtAO:
-        m_Texture: {fileID: 2800000, guid: 928a8f05ea816164ba366b9dd7d4b315, type: 3}
+        m_Texture: {fileID: 2800000, guid: b97770cb8e80fb643a5365a5aea838cd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtBase:
-        m_Texture: {fileID: 2800000, guid: 431576af4cf2117488a714721da43987, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca32841ecb375ee46b569802b223664e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtHeight:
-        m_Texture: {fileID: 2800000, guid: 9de6cc4fa5148414599fdb2139c286db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40f721c610f31e9478b2c2b04b664e01, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtMetallic:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtNormal:
-        m_Texture: {fileID: 2800000, guid: 71d0583a88960b546b9050b5b8dc8940, type: 3}
+        m_Texture: {fileID: 2800000, guid: a88893f158a18494b9e998e6149dd05d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtPacked:
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtRoughness:
-        m_Texture: {fileID: 2800000, guid: 7461a0b20c49d684e82acb3d79d931ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5aec582bdb2ed1d4daab26ccd9085d29, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassAO:
@@ -143,7 +143,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOStrength: 1
+    - _AOStrength: 2
     - _ColorMaskSoftness: 1
     - _DirtBrightness: 1
     - _DirtHue: 0
@@ -161,8 +161,8 @@ Material:
     - _MossHue: 0
     - _MossSaturation: 1
     - _MossSmoothness: 0.45
-    - _NormalScale: 2
-    - _RoughnessStrength: 1.848
+    - _NormalScale: 1.3
+    - _RoughnessStrength: 1.8
     - _StoneBrightness: 1
     - _StoneHue: 0
     - _StoneSaturation: 1
@@ -170,9 +170,13 @@ Material:
     - _UseHeightBlend: 0
     - _UseNormals: 1
     m_Colors:
-    - _DirtTilingOffset: {r: 7, g: 7, b: 0, a: 0}
+    - _DirtHSB: {r: 0, g: 1, b: 1, a: 0}
+    - _DirtTilingOffset: {r: 25, g: 25, b: 25, a: 0}
+    - _GrassHSB: {r: 0, g: 1, b: 1, a: 0}
     - _GrassTilingOffset: {r: 25, g: 25, b: 0, a: 0}
+    - _MossHSB: {r: 0, g: 1, b: 1, a: 0}
     - _MossTilingOffset: {r: 25, g: 25, b: 0, a: 0}
+    - _StoneHSB: {r: 0, g: 1, b: 1, a: 0}
     - _StoneTilingOffset: {r: 8, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

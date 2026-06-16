@@ -31,8 +31,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AOStrength: 2
     - _HeightBlend: 0.5
-    - _RoughnessStrength: 1.903
+    - _NormalScale: 1.3
+    - _RoughnessStrength: 1.8
     m_Colors:
     - _DirtTilingOffset: {r: 20, g: 20, b: 0, a: 0}
     - _GrassTilingOffset: {r: 50, g: 50, b: 0, a: 0}

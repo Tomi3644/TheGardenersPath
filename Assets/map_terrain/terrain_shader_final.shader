@@ -48,7 +48,7 @@ Shader "Custom/URP/Mesh Terrain 4 Layer Lit HSB DBuffer Decals"
         [Header(Global)]
         _NormalScale("Normal Scale", Range(0,2)) = 1
         _RoughnessStrength("Roughness Strength", Range(0,2)) = 1
-        _AOStrength("AO Strength", Range(0,1)) = 1
+        _AOStrength("AO Strength", Range(0,4)) = 1
     }
 
     SubShader
