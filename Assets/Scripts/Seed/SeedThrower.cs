@@ -4,7 +4,7 @@ public class SeedThrower : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform cam;
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform plantStartPos, mushroomStartPos;
     [SerializeField] private GameObject objectToThrow;
     [SerializeField] private Animator handsAnimator;
     [SerializeField] private Animator seedGetUIAnimator;
@@ -27,6 +27,7 @@ public class SeedThrower : MonoBehaviour
 
     private bool plantSeedUnlocked;
     private int seedThrownID;
+    private Transform attackPoint;
 
     private bool readyToThrow;
     private bool alreadyThrewPlant;
@@ -78,6 +79,9 @@ public class SeedThrower : MonoBehaviour
     public void Throw(int seedID)
     {
         readyToThrow = false;
+
+        if (seedID == 1) attackPoint = mushroomStartPos;
+        else attackPoint = plantStartPos;
 
         // instantiate object to throw
         Vector3 spawnPos = attackPoint.position + cam.forward * 0.5f;
