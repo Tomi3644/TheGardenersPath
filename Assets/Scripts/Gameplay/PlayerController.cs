@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float previousHeight;
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
+    private bool canUseCoyote, hasJumpInput;
 
     [SerializeField]
     private float playerSpeed;
@@ -105,18 +106,21 @@ public class PlayerController : MonoBehaviour
         if (isJumping) jumpButtonPressedTime = Time.time;
         if (isGrounded) lastGroundedTime = Time.time;
 
-        if (Time.time - lastGroundedTime <= coyoteTime && Time.time - jumpButtonPressedTime <= coyoteTime && canJump && !isOnLadder)
+        canUseCoyote = Time.time - lastGroundedTime <= coyoteTime;
+        hasJumpInput = Time.time - jumpButtonPressedTime <= coyoteTime;
+
+        if ((isGrounded || canUseCoyote) && hasJumpInput && canJump && !isOnLadder)
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            playerVelocity.y = 0f;
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+
             canJump = false;
+            jumpButtonPressedTime = null;
+            lastGroundedTime = null;
+
             StartCoroutine(JumpWait());
         }
-
-        // if (isGrounded && playerVelocity.y < 0)
-        // {
-        //     playerVelocity.y = -0.1f;
-        // }
-
+        
         // Gravity application on player (different if on ladder)
         if (!isOnLadder && !bouncedThisFrame) playerVelocity.y += gravityValue * Time.deltaTime;
 
