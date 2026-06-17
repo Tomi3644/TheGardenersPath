@@ -27,6 +27,7 @@ public class CreditsManager : MonoBehaviour
             index++;
         }
         Destroy(FindFirstObjectByType<CreditsTransitioning>().gameObject);
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 }
