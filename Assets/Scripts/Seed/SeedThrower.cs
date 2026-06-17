@@ -96,7 +96,7 @@ public class SeedThrower : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        if(Physics.Raycast(cam.position, cam.forward, out hit, 500f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             forceDirection = (hit.point - attackPoint.position).normalized;
         }
