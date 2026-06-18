@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: test_tree_foliage_05_B (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f517c1be651d4246946b513a2345897, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5697984553619733371, guid: 2f517c1be651d4246946b513a2345897, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
