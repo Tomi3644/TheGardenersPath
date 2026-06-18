@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5903735983730066315
+--- !u!114 &-7653520327300345831
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SM_2D_Trees_01
+  m_Name: Sprite_2D_blocs_leaves_04
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,7 +42,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 3fea1694dd4af9f4cb8ba2cc6efc8ca5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 12d860953f7fd394bbb3249f5841a11e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3fea1694dd4af9f4cb8ba2cc6efc8ca5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 12d860953f7fd394bbb3249f5841a11e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -132,8 +132,8 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.98522294, b: 0.81446534, a: 1}
-    - _Color: {r: 1, g: 0.9852229, b: 0.81446534, a: 1}
+    - _BaseColor: {r: 0.54216063, g: 0.6415094, b: 0.32075462, a: 1}
+    - _Color: {r: 0.54216063, g: 0.6415094, b: 0.3207546, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
