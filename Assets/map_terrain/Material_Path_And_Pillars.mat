@@ -30,15 +30,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtAO:
-        m_Texture: {fileID: 2800000, guid: 8d818023254f6094faa57c2f2eadb1a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 928a8f05ea816164ba366b9dd7d4b315, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtBase:
-        m_Texture: {fileID: 2800000, guid: e59839fe4e2de1742be315b97de1b669, type: 3}
+        m_Texture: {fileID: 2800000, guid: 431576af4cf2117488a714721da43987, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtHeight:
-        m_Texture: {fileID: 2800000, guid: 1fd088b2854bf164ab8d1a9d69b2a30f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9de6cc4fa5148414599fdb2139c286db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtMetallic:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtNormal:
-        m_Texture: {fileID: 2800000, guid: 880ab0b367cbad5498de7dc97f7ff758, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71d0583a88960b546b9050b5b8dc8940, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtPacked:
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtRoughness:
-        m_Texture: {fileID: 2800000, guid: 8d818023254f6094faa57c2f2eadb1a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7461a0b20c49d684e82acb3d79d931ae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassAO:

@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
-        m_Texture: {fileID: 2800000, guid: c65d20a46d5bbc74ba608b9548e82fad, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TerrainAO:
@@ -90,7 +90,7 @@ Material:
     - _HeightStrength: 2.3
     - _NormalStrength: 1.621
     - _RockTiling: 1
-    - _RoughnessStrength: 2.05
+    - _RoughnessStrength: 0.5
     - _Saturation: 1.081
     - _TerrainHeight: 0
     - _TerrainTiling: 0.1
