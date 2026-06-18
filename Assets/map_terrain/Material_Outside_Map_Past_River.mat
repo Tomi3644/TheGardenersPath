@@ -29,10 +29,32 @@ Material:
         m_Texture: {fileID: 2800000, guid: d1dca50749e42b74a899cdd9d5c78bae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DirtAO:
+        m_Texture: {fileID: 2800000, guid: 928a8f05ea816164ba366b9dd7d4b315, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtBase:
+        m_Texture: {fileID: 2800000, guid: 431576af4cf2117488a714721da43987, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtHeight:
+        m_Texture: {fileID: 2800000, guid: 9de6cc4fa5148414599fdb2139c286db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtNormal:
+        m_Texture: {fileID: 2800000, guid: 71d0583a88960b546b9050b5b8dc8940, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtRoughness:
+        m_Texture: {fileID: 2800000, guid: 7461a0b20c49d684e82acb3d79d931ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AOStrength: 1.68
     - _HeightBlend: 0.5
-    - _RoughnessStrength: 1.903
+    - _NormalScale: 1.3
+    - _RoughnessStrength: 1.512
     m_Colors:
     - _DirtTilingOffset: {r: 20, g: 20, b: 0, a: 0}
     - _GrassTilingOffset: {r: 50, g: 50, b: 0, a: 0}

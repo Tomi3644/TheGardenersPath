@@ -4,7 +4,7 @@ public class SeedThrower : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform cam;
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform plantStartPos, mushroomStartPos;
     [SerializeField] private GameObject objectToThrow;
     [SerializeField] private Animator handsAnimator;
     [SerializeField] private Animator seedGetUIAnimator;
@@ -27,6 +27,7 @@ public class SeedThrower : MonoBehaviour
 
     private bool plantSeedUnlocked;
     private int seedThrownID;
+    private Transform attackPoint;
 
     private bool readyToThrow;
     private bool alreadyThrewPlant;
@@ -79,6 +80,9 @@ public class SeedThrower : MonoBehaviour
     {
         readyToThrow = false;
 
+        if (seedID == 1) attackPoint = mushroomStartPos;
+        else attackPoint = plantStartPos;
+
         // instantiate object to throw
         Vector3 spawnPos = attackPoint.position + cam.forward * 0.5f;
 
@@ -96,7 +100,7 @@ public class SeedThrower : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        if(Physics.Raycast(cam.position, cam.forward, out hit, 500f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             forceDirection = (hit.point - attackPoint.position).normalized;
         }

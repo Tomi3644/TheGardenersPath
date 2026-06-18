@@ -14,8 +14,8 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: 7d4430dbe46e67a498ca6ae169a36991, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap_Feuilles:
-        m_Texture: {fileID: 2800000, guid: c928c0232a6db8f4da32e480da9fff57, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4e55c82c2c624ae0bb8e3e9f483b8e35_Texture_1_Texture2D:
@@ -54,12 +54,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaCutoff: 0.75
+    - _AlphaCutoff: 0.3
     - _Force_Relief: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Wind_Speed: 0.01
-    - _Wind_Strenght: 0.06
+    - _Wind_Speed: 0
+    - _Wind_Strenght: 0
     m_Colors:
     - _Color: {r: 0.39215687, g: 0.5686275, b: 0.1764706, a: 1}
     - _Wind_Direction: {r: 1, g: 0, b: 0, a: 0}

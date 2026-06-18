@@ -604,7 +604,7 @@ MonoBehaviour:
   - Merci
   - The Gardener's Path
   - The Gardener's Path
-  transitionTime: 2.71
+  transitionTime: 2.7315
   creditsText: {fileID: 1951371590}
 --- !u!114 &1659920830
 MonoBehaviour:

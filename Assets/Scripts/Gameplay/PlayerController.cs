@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private float gravityValue;
     private float previousHeight;
+    private float? lastGroundedTime;
+    private float? jumpButtonPressedTime;
+    private bool canUseCoyote, hasJumpInput;
 
     [SerializeField]
     private float playerSpeed;
@@ -31,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private float bounceHeight;
     [SerializeField]
     private float groundSphereSize;
+    [SerializeField]
+    private float coyoteTime = 0.2f;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip mushroomBounceSFX;
@@ -98,19 +103,24 @@ public class PlayerController : MonoBehaviour
         // Player jump on input if on layer Ground
         isJumping = inputManager.PlayerJumpedThisFrame();
 
-        if (isJumping && isGrounded && canJump && !isOnLadder)
-        {
+        if (isJumping) jumpButtonPressedTime = Time.time;
+        if (isGrounded) lastGroundedTime = Time.time;
 
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        canUseCoyote = Time.time - lastGroundedTime <= coyoteTime;
+        hasJumpInput = Time.time - jumpButtonPressedTime <= coyoteTime;
+
+        if ((isGrounded || canUseCoyote) && hasJumpInput && canJump && !isOnLadder)
+        {
+            playerVelocity.y = 0f;
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+
             canJump = false;
+            jumpButtonPressedTime = null;
+            lastGroundedTime = null;
+
             StartCoroutine(JumpWait());
         }
-
-        // if (isGrounded && playerVelocity.y < 0)
-        // {
-        //     playerVelocity.y = -0.1f;
-        // }
-
+        
         // Gravity application on player (different if on ladder)
         if (!isOnLadder && !bouncedThisFrame) playerVelocity.y += gravityValue * Time.deltaTime;
 

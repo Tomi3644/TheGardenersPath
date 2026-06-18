@@ -94,7 +94,7 @@ Material:
     - _Saturation: 1
     - _TerrainHeight: 0
     - _TerrainTiling: 0.1
-    - _TextureTiling: 1
+    - _TextureTiling: 0.5
     - _Tiling: 0.42
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
