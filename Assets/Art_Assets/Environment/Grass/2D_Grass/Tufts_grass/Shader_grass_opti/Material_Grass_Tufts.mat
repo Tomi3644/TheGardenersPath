@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3e704ed6617458e4ebaf877679cc030b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d0e6e7bcea30d324d8bd404b33e9c929, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PaintNoise:
@@ -52,6 +52,7 @@ Material:
     - _PaintTiling: 0.268
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RandomSeed: 0
     - _Smoothness: 0.242
     m_Colors:
     - _BottomColor: {r: 0.08342228, g: 0.23899364, b: 0.18276301, a: 1}
