@@ -7,7 +7,8 @@ public enum MenuState
 {
     MainMenu,
     PauseMenu,
-    Settings
+    Settings,
+    Explanation
 }
 
 public class UIManager : MonoBehaviour
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     public GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject explanationMenu;
+
 
     [Header("Objects")]
     [SerializeField] private CinemachinePanTilt cameraController;
@@ -25,6 +28,7 @@ public class UIManager : MonoBehaviour
     private MenuState previousMenu;
     [SerializeField] private Button firstSettingsButton;
     [SerializeField] private Button firstMainButton;
+    [SerializeField] private Button explanationButton;
 
     private void Awake()
     {
@@ -61,6 +65,7 @@ public class UIManager : MonoBehaviour
         mainMenu.SetActive(newMenu == MenuState.MainMenu);
         pauseMenu.SetActive(newMenu == MenuState.PauseMenu);
         settingsMenu.SetActive(newMenu == MenuState.Settings);
+        explanationMenu.SetActive(newMenu == MenuState.Explanation);
     }
 
     // 🎮 Bouton Settings (utilisé partout)
@@ -77,6 +82,13 @@ public class UIManager : MonoBehaviour
         OpenMenu(previousMenu);
         Cursor.visible = true;
         firstMainButton.Select();
+    }
+
+    public void OpenExplanation()
+    {
+        OpenMenu(MenuState.Explanation);
+        Cursor.visible = true;
+        explanationButton.Select();
     }
 
     // ⏸ Exemple pour ouvrir pause menu (ESC)
