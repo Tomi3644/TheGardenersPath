@@ -56,7 +56,7 @@ Material:
     - _Smoothness: 0.242
     m_Colors:
     - _BottomColor: {r: 0.08235296, g: 0.23921569, b: 0.16042328, a: 1}
-    - _FarColor: {r: 0.06271295, g: 0.23773581, b: 0.053378392, a: 1}
+    - _FarColor: {r: 0.11054106, g: 0.3584906, b: 0.102136, a: 1}
     - _NearColor: {r: 0.07058821, g: 0.4745098, b: 0.023529414, a: 1}
     - _NearFarRange: {r: 0.1, g: 45, b: 0, a: 0}
     - _PaintTiling: {r: 3.42, g: 4.91, b: 0, a: 0}
