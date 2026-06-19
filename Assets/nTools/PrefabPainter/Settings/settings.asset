@@ -707,7 +707,7 @@ MonoBehaviour:
       - gameObject: {fileID: 4115165732812477072, guid: 6a260e70c2002af4ea0fe2be7b3f2156, type: 3}
       - gameObject: {fileID: 0}
       selectedSlot: 9
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: grass random
@@ -1652,7 +1652,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 1
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: grasses random
