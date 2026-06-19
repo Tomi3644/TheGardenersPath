@@ -30,4 +30,15 @@ public class CreditsManager : MonoBehaviour
         Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
+
+    private void Update()
+    {
+        if (InputManager.Instance.OpeningSettingsMenu())
+        {
+            StopCoroutine(Credits());
+            Destroy(FindFirstObjectByType<CreditsTransitioning>().gameObject);
+            Cursor.visible = true;
+            SceneManager.LoadScene(0);
+        }
+    }
 }
