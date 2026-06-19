@@ -46,19 +46,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaCuttoff: 0.154
+    - _AlphaCuttoff: 0.01
     - _HeightBlend: 0.608
-    - _PaintStrength: 0.291
+    - _PaintStrength: 0.313
     - _PaintTiling: 0.268
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RandomSeed: 0
     - _Smoothness: 0.242
     m_Colors:
-    - _BottomColor: {r: 0.08342228, g: 0.23899364, b: 0.18276301, a: 1}
-    - _FarColor: {r: 0.039215688, g: 0.2509804, b: 0.027450982, a: 1}
+    - _BottomColor: {r: 0.08235296, g: 0.23921569, b: 0.16042328, a: 1}
+    - _FarColor: {r: 0.06271295, g: 0.23773581, b: 0.053378392, a: 1}
     - _NearColor: {r: 0.07058821, g: 0.4745098, b: 0.023529414, a: 1}
-    - _NearFarRange: {r: 0.1, g: 25, b: 0, a: 0}
+    - _NearFarRange: {r: 0.1, g: 45, b: 0, a: 0}
     - _PaintTiling: {r: 3.42, g: 4.91, b: 0, a: 0}
     - _PaintTiling_v2: {r: 1.04, g: 4.3, b: 0, a: 0}
   m_BuildTextureStacks: []
