@@ -70,7 +70,7 @@ Material:
     - _Wind_Speed: 0
     - _Wind_Strenght: 0
     m_Colors:
-    - _Color: {r: 0.49117112, g: 0.67295593, b: 0.25182936, a: 1}
+    - _Color: {r: 0.44373903, g: 0.74509805, b: 0.26666665, a: 1}
     - _PaintTiling: {r: 0, g: 0, b: 0, a: 0}
     - _Wind_Direction: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
