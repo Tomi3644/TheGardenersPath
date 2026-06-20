@@ -1977,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_02
       objectReference: {fileID: 0}
+    - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2050,6 +2054,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2805,6 +2813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_04
       objectReference: {fileID: 0}
+    - target: {fileID: 5336007348814338467, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7494288441683736890, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.493518
@@ -3000,6 +3012,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -6422,6 +6438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_03
       objectReference: {fileID: 0}
+    - target: {fileID: 3854386314137789988, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6302071077788720331, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.65279037
@@ -6756,6 +6776,10 @@ PrefabInstance:
     - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7852,6 +7876,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -19832,6 +19860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22256,6 +22288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22334,6 +22370,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23721,6 +23761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23752,8 +23796,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731146146}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0065377546, y: -0.2093114, z: -0.0014235957, w: 0.9778262}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.22267686, y: -0.14990991, z: 0.03465088, w: 0.96267414}
+  m_LocalPosition: {x: -25.392273, y: 12.516941, z: -25.95715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24324,6 +24368,10 @@ PrefabInstance:
     - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26068,6 +26116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_06
       objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.0425205
@@ -26563,6 +26615,10 @@ PrefabInstance:
     - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27361,6 +27417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.0077636
@@ -28027,6 +28087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28615,6 +28679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28726,6 +28794,10 @@ PrefabInstance:
     - target: {fileID: 3854386314137789988, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854386314137789988, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6302071077788720331, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
       propertyPath: m_LocalScale.x
@@ -29305,6 +29377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29378,6 +29454,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29483,6 +29563,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -30260,6 +30344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.8778794
@@ -30826,6 +30914,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32145,6 +32237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_02
       objectReference: {fileID: 0}
+    - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32218,6 +32314,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37268,6 +37368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.182453
@@ -38011,6 +38115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38106,6 +38214,10 @@ PrefabInstance:
     - target: {fileID: 5336007348814338467, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336007348814338467, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7494288441683736890, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
       propertyPath: m_LocalScale.x
@@ -38572,6 +38684,10 @@ PrefabInstance:
     - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663687725107158523, guid: 48895240c89ff994093aaedf122db093, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39176,6 +39292,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -40134,6 +40254,10 @@ PrefabInstance:
     - target: {fileID: 3854386314137789988, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854386314137789988, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6302071077788720331, guid: d3a8c7b86c8a78f40aca656e1c460d7b, type: 3}
       propertyPath: m_LocalScale.x
@@ -41218,6 +41342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42249,6 +42377,10 @@ PrefabInstance:
     - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44593,6 +44725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45535,6 +45671,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -46957,6 +47097,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -52667,6 +52811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2668631886363330015, guid: 81daea95acc937045b3e631482b2b966, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54045,6 +54193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54468,6 +54620,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55995,6 +56151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_04
       objectReference: {fileID: 0}
+    - target: {fileID: 5336007348814338467, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7494288441683736890, guid: 5d7cd019f2f7758418e0017fcddec67d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2848065
@@ -56938,6 +57098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.3171
@@ -57538,6 +57702,10 @@ PrefabInstance:
     - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861547201026908183, guid: deb96e4f9b394114284ddd3b541c163f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58679,6 +58847,10 @@ PrefabInstance:
     - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_Name
       value: SM_2D_Leaves_06 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386196713513601859, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6786366681453383364, guid: 3a1e91d07a1c8b44c93dc9c0a89869ec, type: 3}
       propertyPath: m_LocalScale.x

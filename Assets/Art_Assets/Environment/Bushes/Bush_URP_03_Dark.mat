@@ -37,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PaintNoise:
-        m_Texture: {fileID: 2800000, guid: e79f200e5cc2bd541ae669153a3fd1cc, type: 3}
+        m_Texture: {fileID: 2800000, guid: f848d65ed0e54434190bbeab3926da59, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4e55c82c2c624ae0bb8e3e9f483b8e35_Texture_1_Texture2D:
@@ -64,7 +64,7 @@ Material:
     m_Floats:
     - _AlphaCutoff: 0.3
     - _Force_Relief: 0.1
-    - _PaintStrength: 1
+    - _PaintStrength: 0.358
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Wind_Speed: 0
