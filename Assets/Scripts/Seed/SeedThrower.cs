@@ -8,6 +8,7 @@ public class SeedThrower : MonoBehaviour
     [SerializeField] private GameObject objectToThrow;
     [SerializeField] private Animator handsAnimator;
     [SerializeField] private Animator seedGetUIAnimator;
+    [SerializeField] private GameObject seedEntryCollider;
 
     [Header("Settings")]
     [SerializeField] private float throwCooldown;
@@ -124,6 +125,7 @@ public class SeedThrower : MonoBehaviour
     {
         if (other.tag == "PlantSeedGet")
         {
+            seedEntryCollider.SetActive(false);
             plantSeedUnlocked = true;
             SFXManager.instance.PlaySFX(seedGet);
             transition.MakeTransition();

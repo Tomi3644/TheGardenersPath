@@ -5,18 +5,19 @@ public class CaveLightFader : MonoBehaviour
 {
     [SerializeField] private float fadeTime;
     [SerializeField] private DeathManager deathManager;
+    [SerializeField] private float lightingDefaultIntensity;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cave" && deathManager.hasRespawnedThisFrame == false)
         {
-            StartCoroutine(FadeIntensity(.8f, 0f, fadeTime));
+            StartCoroutine(FadeIntensity(lightingDefaultIntensity, 0f, fadeTime));
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Cave")
         {
-            StartCoroutine(FadeIntensity(0f, .8f, fadeTime));
+            StartCoroutine(FadeIntensity(0f, lightingDefaultIntensity, fadeTime));
         }
     }
 
