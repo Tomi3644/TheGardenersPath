@@ -242,6 +242,9 @@
         },
         {
             "m_Id": "8f10de78da77443485fc3c218c9a6e10"
+        },
+        {
+            "m_Id": "2c6a3dd369e545de94171ab3e463cf2e"
         }
     ],
     "m_GroupDatas": [
@@ -478,6 +481,20 @@
                     "m_Id": "edf22d73e31749619360d6b33101a300"
                 },
                 "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "2c6a3dd369e545de94171ab3e463cf2e"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "b66ca746e74245c680c041aac1cc1d00"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -1328,7 +1345,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "0a60629565dc4f49a468abc5b36d16d9",
-    "m_Name": "Mian",
+    "m_Name": "Main",
     "m_ChildObjectList": [
         {
             "m_Id": "d59795e0d7e743f0abd95a6ca9a3bb49"
@@ -2265,7 +2282,7 @@
     "m_Title": "Atlas Offset",
     "m_Position": {
         "x": -2251.2001953125,
-        "y": 1282.39990234375
+        "y": 1282.400146484375
     }
 }
 
@@ -2458,6 +2475,42 @@
         "w": 0.0
     },
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "2c6a3dd369e545de94171ab3e463cf2e",
+    "m_Group": {
+        "m_Id": "7e52a67e0e2b457bb68d807303853b74"
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -5364.0,
+            "y": 1552.0,
+            "width": 144.0,
+            "height": 33.5999755859375
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "8202bc3c70584a73b1e1b3ba5a1e6245"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "6a6e3682392a4a6dbd104319ec58d004"
+    }
 }
 
 {
@@ -2921,7 +2974,7 @@
     "m_ObjectId": "47f32bacfba848508a8727643f562807",
     "m_Title": "painted base",
     "m_Position": {
-        "x": -1210.400146484375,
+        "x": -1210.4000244140625,
         "y": 668.800048828125
     }
 }
@@ -3925,7 +3978,7 @@
     "m_ObjectId": "64fd1dca6ed24e57a836531fbe8b44c1",
     "m_Title": "MainTex",
     "m_Position": {
-        "x": -1274.400146484375,
+        "x": -1274.4000244140625,
         "y": 188.79998779296876
     }
 }
@@ -4624,7 +4677,7 @@
     "m_ObjectId": "7e52a67e0e2b457bb68d807303853b74",
     "m_Title": "Random Variant",
     "m_Position": {
-        "x": -5668.0,
+        "x": -5668.00048828125,
         "y": 1176.0
     }
 }
@@ -4683,7 +4736,7 @@
     "m_ObjectId": "7f626fbe5dd241989b76653532aaca90",
     "m_Title": "ScaledUV",
     "m_Position": {
-        "x": -1841.60009765625,
+        "x": -1841.5997314453125,
         "y": 1261.599853515625
     }
 }
@@ -4777,6 +4830,22 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "8202bc3c70584a73b1e1b3ba5a1e6245",
+    "m_Id": 0,
+    "m_DisplayName": "RandomSeed",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -5592,7 +5661,7 @@
     "m_Title": "PaintVariation",
     "m_Position": {
         "x": -2656.800048828125,
-        "y": -652.0
+        "y": -651.9999389648438
     }
 }
 
@@ -6024,8 +6093,8 @@
     "m_ObjectId": "b2df52ec8b2a43d193fd2baf9bd2d6e7",
     "m_Title": "Distance Color",
     "m_Position": {
-        "x": -2726.400146484375,
-        "y": -23.199981689453126
+        "x": -2726.400634765625,
+        "y": -23.20001220703125
     }
 }
 
@@ -6243,7 +6312,7 @@
     "m_ObjectId": "b861b3704e264595b2d780db71ef56a7",
     "m_Title": "CellSize",
     "m_Position": {
-        "x": -2570.400146484375,
+        "x": -2570.400390625,
         "y": 1568.0
     }
 }
@@ -6296,8 +6365,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3142.400146484375,
-            "y": 1296.7999267578125,
+            "x": -3131.199951171875,
+            "y": 1448.0,
             "width": 208.000244140625,
             "height": 301.5999755859375
         }
@@ -7447,7 +7516,7 @@
     "m_ObjectId": "df8970e068f64bbeaa36782cb62a053f",
     "m_Title": "HeightColor",
     "m_Position": {
-        "x": -1922.400146484375,
+        "x": -1922.39990234375,
         "y": 670.4000244140625
     }
 }
