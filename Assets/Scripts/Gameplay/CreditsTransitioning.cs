@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using UnityEngine.Audio;
 
 public class CreditsTransitioning : MonoBehaviour
 {

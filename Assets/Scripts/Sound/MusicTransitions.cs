@@ -52,7 +52,7 @@ public class MusicTransitions : MonoBehaviour
                 musicManager.PlayStopClip(true, true);
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, 0));
 
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -21));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.ForestAmbiance, -30));
 
                 break;
@@ -60,7 +60,7 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicCave, 0));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, -80));
 
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, 0));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, 2));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -70));
 
                 SFXManager.instance.SwitchFootsteps();
@@ -71,7 +71,7 @@ public class MusicTransitions : MonoBehaviour
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicMain, 0));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.MusicCave, -80));
 
-                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -20));
+                StartCoroutine(musicManager.FadeTrack(SoundChannel.RiverAmbiance, -21));
                 StartCoroutine(musicManager.FadeTrack(SoundChannel.CaveAmbiance, -70));
 
                 SFXManager.instance.SwitchFootsteps();
