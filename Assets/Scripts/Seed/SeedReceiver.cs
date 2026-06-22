@@ -20,10 +20,22 @@ public class SeedReceiver : MonoBehaviour
     // Here is the event that is called
     public UnityEvent seedReaction;
 
-    private void OnCollisionEnter(Collision collision)
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     // If the collider has the tag we set in the seedToReactTo variable...
+    //     if (collision.gameObject.tag == seedToReactTo.ToString())
+    //     {
+    //         // ... the event will be called
+    //         seedReaction.Invoke();
+            
+    //         SFXManager.instance.PlaySFX(SFXManager.instance.seedReceivedSFX);
+    //     }
+    // }
+
+    private void OnTriggerEnter(Collider other)
     {
         // If the collider has the tag we set in the seedToReactTo variable...
-        if (collision.gameObject.tag == seedToReactTo.ToString())
+        if (other.gameObject.tag == seedToReactTo.ToString())
         {
             // ... the event will be called
             seedReaction.Invoke();
