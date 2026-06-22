@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour
         // Check if player on the ground
         isGrounded = Physics.SphereCast(transform.position, groundSphereSize, -transform.up, out RaycastHit groundHit, 0.6f, 1 << 3);
 
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = -2f;
+        }
+
         // Get player inputs and move accordingly
         // If on ladder, player goes up
         Vector2 movement = inputManager.GetPlayerMovement();

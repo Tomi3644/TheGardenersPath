@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 public class DeathManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class DeathManager : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Animation deathUI;
+    [SerializeField] private CinemachinePanTilt playerCameraPanTilt;
 
     [Header("SFX")]
     [SerializeField] private AudioClip riverDeath;
@@ -74,6 +76,12 @@ public class DeathManager : MonoBehaviour
         characterController.enabled = false;
 
         transform.position = lastRespawnPoint.transform.position;
+
+        // playerCameraPanTilt.gameObject.transform.rotation = lastRespawnPoint.transform.rotation;
+
+        // playerCameraPanTilt.PanAxis.Value = lastRespawnPoint.transform.eulerAngles.y;
+        // playerCameraPanTilt.TiltAxis.Value = 0f;
+
         hasRespawnedThisFrame = true;
 
         capsuleCollider.enabled = true;
