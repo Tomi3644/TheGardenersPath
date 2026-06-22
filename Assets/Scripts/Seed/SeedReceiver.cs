@@ -19,6 +19,8 @@ public class SeedReceiver : MonoBehaviour
     [SerializeField] private Material fixedMaterial;
     // Here is the event that is called
     public UnityEvent seedReaction;
+    [SerializeField] private bool lastTrigger;
+    [SerializeField] private GameObject endTrigger;
 
     // private void OnCollisionEnter(Collision collision)
     // {
@@ -39,8 +41,9 @@ public class SeedReceiver : MonoBehaviour
         {
             // ... the event will be called
             seedReaction.Invoke();
-            
+
             SFXManager.instance.PlaySFX(SFXManager.instance.seedReceivedSFX);
+            if (lastTrigger) endTrigger.SetActive(true);
         }
     }
 
