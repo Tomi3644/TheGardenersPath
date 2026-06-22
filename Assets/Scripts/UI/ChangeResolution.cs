@@ -52,8 +52,8 @@ public class ChangeResolution : MonoBehaviour
     void DisplayResolution()
     {
         // Display FullScreen
-        if (fullScreen) fullScreenDisplay.text = "FullScreen : ON";
-        else fullScreenDisplay.text = "FullScreen : OFF";
+        if (fullScreen) fullScreenDisplay.text = "Plein-Ecran : ON";
+        else fullScreenDisplay.text = "Plein-Ecran : OFF";
 
         // Display the selected resolution
         if (resolutionChoice == 1)
