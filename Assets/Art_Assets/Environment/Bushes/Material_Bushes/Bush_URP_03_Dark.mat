@@ -67,8 +67,8 @@ Material:
     - _PaintStrength: 0.358
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Wind_Speed: 0
-    - _Wind_Strenght: 0
+    - _Wind_Speed: 0.02
+    - _Wind_Strenght: 0.08
     m_Colors:
     - _Color: {r: 0.2635053, g: 0.5660378, b: 0.20469908, a: 1}
     - _PaintTiling: {r: 0, g: 0, b: 0, a: 0}

@@ -54,6 +54,11 @@ Material:
     - _QueueOffset: 0
     - _RandomSeed: 0
     - _Smoothness: 0.242
+    - _WindBaseLock: 0.1
+    - _WindBend: 2
+    - _WindFrequency: 0.7
+    - _WindSpeed: 2.1
+    - _WindStrength: 0.013
     m_Colors:
     - _BottomColor: {r: 0.08235296, g: 0.23921569, b: 0.16042328, a: 1}
     - _FarColor: {r: 0.11054106, g: 0.3584906, b: 0.102136, a: 1}
@@ -61,6 +66,7 @@ Material:
     - _NearFarRange: {r: 0.1, g: 45, b: 0, a: 0}
     - _PaintTiling: {r: 3.42, g: 4.91, b: 0, a: 0}
     - _PaintTiling_v2: {r: 1.04, g: 4.3, b: 0, a: 0}
+    - _WindDirection: {r: 1, g: 0.3, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7359975427380812949
