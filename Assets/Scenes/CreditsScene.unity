@@ -764,8 +764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsManager
   displayElements:
-  - "Cr\xE9\xE9 pour l'\xC9dition 2026 des Enjmin Games Show "
-  - "Fait par des \xC9tudiants en Premi\xE8re Ann\xE9e de Licence au CNAM-ENJMIN"
+  - Created for the 2026''s Edition of the Enjmin Games Show
+  - Made by First-Year Bachelor Degree Students at CNAM-ENJMIN
   - Game/Level Designer :<br><br>Thomas BARLIER<br>Alexandre DUSSAUD<br>Moana HOUY<br>Thomas
     OLIVON<br>Hugo SPAETH
   - Project Manager :<br><br>Alexandre DUSSAUD<br>Thomas OLIVON
@@ -776,10 +776,10 @@ MonoBehaviour:
     OLIVON<br>Hugo SPAETH
   - Programmer :<br><br>Thomas BARLIER<br>Thomas OLIVON
   - Composer/Sound Designer :<br><br>Thomas OLIVON
-  - Police :<br>Silk Flower by Megi Satyo Widodo
-  - Bruits de Pas par congusbongus on OpenGameArt
-  - Skybox de freestylized.com
-  - "Merci d'avoir jou\xE9 !"
+  - Font :<br>Silk Flower by Megi Satyo Widodo
+  - Footsteps Sound Effects by congusbongus on OpenGameArt
+  - Skybox from freestylized.com
+  - Thanks for playing !
   - The Gardener's Path
   transitionTime: 5.463
   creditsText: {fileID: 1951371590}
